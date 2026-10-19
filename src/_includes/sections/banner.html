@@ -1,0 +1,38 @@
+{#
+    Shared interior banner (Figma component "Interior Banner / Desktop" 34:126, Mobile 34:138).
+    hero-288 restyled: pale blue ground, one H1, one Book a Meeting button, optional slim photo.
+    Set before the include:
+        bannerTopper, bannerTitle (the page H1), bannerText
+        bannerImage  (optional, e.g. "/assets/images/jennifer-chambers-headshot.jpg"); leave unset for the text-only version
+        bannerAlt    (alt text for the photo, "[Service] in [City], [ST]")
+    Pages with a photo also add the three AVIF preloads in their head block (copy About's).
+#}
+<!-- Banner 288 -->
+<!-- ============================================ -->
+<!--                   Banner                     -->
+<!-- ============================================ -->
+
+<section id="banner-288" class="{{ 'cs-no-image' if not bannerImage }}">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">{{ bannerTopper }}</span>
+            <h1 class="cs-title">{{ bannerTitle }}</h1>
+            <p class="cs-text">
+                {{ bannerText }}
+            </p>
+            <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+        </div>
+        {% if bannerImage %}
+        <!--Banner Image-->
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}" type="image/avif">
+            <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}" type="image/avif">
+            <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}" type="image/avif">
+            <img src="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | jpeg %}" alt="{{ bannerAlt }}" width="413" height="520" decoding="async" fetchpriority="high">
+        </picture>
+        {% endif %}
+    </div>
+</section>

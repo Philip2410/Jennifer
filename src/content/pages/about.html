@@ -1,18 +1,244 @@
 ---
-title: "About | Code Stitch Web Designs"
-description: "Meta description for the page"
+title: "About Jennifer Chambers | Grande Prairie Insurance Advisor"
+description: "Meet Jennifer Chambers, a Grande Prairie insurance advisor who left 25 years as an optician to help families plan ahead. Free first meeting. Call now!"
 permalink: "/about/"
+bannerTopper: "About Jennifer"
+bannerTitle: "About Jennifer Chambers, Insurance Advisor in Grande Prairie"
+bannerText: "Jennifer Chambers spent 25 years as an optician before her own money wake-up call changed her path. Now she helps Grande Prairie families and business owners get protected and plan ahead."
+bannerImage: "/assets/images/jennifer-chambers-headshot.jpg"
+bannerAlt: "Jennifer Chambers, insurance advisor in Grande Prairie, AB"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
+    <!-- Banner image preloads (match the banner picture sources) -->
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+
     <link rel="stylesheet" href="/assets/css/about.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "url": "{{ client.domain }}/about/",
+            "name": "{{ title }}",
+            "mainEntity": {
+                "@type": "Person",
+                "name": "{{ client.personName }}",
+                "jobTitle": "Insurance Advisor",
+                "image": "{{ client.domain }}{{ bannerImage }}",
+                "worksFor": {
+                    "@type": "InsuranceAgency",
+                    "@id": "{{ client.domain }}/#business",
+                    "name": "{{ client.name }}"
+                },
+                "memberOf": [
+                    { "@type": "Organization", "name": "Grande Prairie Chamber of Commerce" },
+                    { "@type": "Organization", "name": "BNI Northern Connections" },
+                    { "@type": "Organization", "name": "Advocis, The Financial Advisors Association of Canada" }
+                ],
+                "sameAs": [{%- for platform, url in client.socials -%}{% if not loop.first %}, {% endif %}"{{ url }}"{%- endfor -%}]
+            }
+        }
+    </script>
 {% endblock %}
 
 {% block body %}
 
+    {% include "sections/banner.html" %}
 
+    <!-- Sbs 1982 -->
+    <!-- ============================================ -->
+    <!--                Side By Side                  -->
+    <!-- ============================================ -->
+
+    <section id="sbs-1982">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Her story</span>
+                <h2 class="cs-title">From Optician to Insurance Advisor in Grande Prairie</h2>
+                <p class="cs-text-large">
+                    Jennifer Chambers was an optician for 25 years. A financial wake-up call in her 30s changed that, and became the reason for a second career: helping people avoid the same path.
+                </p>
+                <p class="cs-text">
+                    Today she owns <a href="/">Jennifer Chambers Financial Services</a>, with five-plus years in insurance and twenty in the Grande Prairie community. Her meetings start with listening, not a product, because she knows how it feels to not like your own numbers.
+                </p>
+            </div>
+            <div class="cs-image-group">
+                <picture class="cs-background">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 576, height: 960, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 930, height: 1474, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | jpeg %}" alt="Insurance planning meeting in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services 964 -->
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services-964">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">What she focuses on</span>
+                <h2 class="cs-title">Insurance and Planning for Grande Prairie Families and Business Owners</h2>
+                <p class="cs-text">
+                    Jennifer Chambers is independent and works with several insurance companies, so she compares options instead of selling one company's product.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-life.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3"><a href="/life-insurance/" class="cs-h3-link">Life Insurance</a></h3>
+                    <p class="cs-item-text">
+                        Term and whole life coverage, built around your budget, how long you need it and what you want it to do.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-insurance.svg" alt="" width="40" height="35" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3"><a href="/disability-critical-illness-insurance/" class="cs-h3-link">Disability &amp; Critical Illness</a></h3>
+                    <p class="cs-item-text">
+                        Income protection if an accident or illness stops you working, or a lump sum after a covered diagnosis.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-analysis.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3"><a href="/small-business-benefits/" class="cs-h3-link">Small Business Benefits</a></h3>
+                    <p class="cs-item-text">
+                        Benefits and key person coverage for teams of 1 to 10, plus succession plans for family businesses.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-savings.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3"><a href="/savings-investments/" class="cs-h3-link">Savings &amp; Investments</a></h3>
+                    <p class="cs-item-text">
+                        Segregated funds and other insured investments for growth with added protection.
+                    </p>
+                </li>
+            </ul>
+            <a href="/services/" class="cs-button-solid">See All Services</a>
+        </div>
+    </section>
+
+    <!-- Services 1645 -->
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services-1645">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">How she works</span>
+                <h2 class="cs-title">A Safe Place to Ask the Hard Money Questions</h2>
+                <p class="cs-text">Money is never just numbers. Habits, emotions and the what-ifs all play a part. Jennifer Chambers takes the time to understand your full financial picture before she suggests anything.</p>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">No shame, no judgment.</h3>
+                        <p class="cs-item-text">Ask the question you've been putting off. You'll be heard and taken seriously.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Your whole picture first.</h3>
+                        <p class="cs-item-text">Income, debts, family and business all come before any talk of coverage.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Today and tomorrow.</h3>
+                        <p class="cs-item-text">A good plan lets you save for later and still enjoy now. She helps you find that balance and build habits that last.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">A free first hour.</h3>
+                        <p class="cs-item-text">There's no planning fee. She's paid by commission on what you choose to put in place.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Services 2175 -->
+    <!-- ============================================ -->
+    <!--                 Community                    -->
+    <!-- ============================================ -->
+
+    <section id="services-2175">
+        <div class="cs-container">
+            <div class="cs-content">
+                <div class="cs-flex-group">
+                    <span class="cs-topper">In the community</span>
+                    <h2 class="cs-title">Part of Grande Prairie's Business Community</h2>
+                </div>
+                <p class="cs-text">
+                    Jennifer Chambers gives back by supporting and working alongside other local business owners.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-logo-wrapper">
+                        <img class="cs-logo" src="/assets/images/chamber-of-commerce-logo.png" alt="Grande Prairie Chamber of Commerce logo" width="300" height="112" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="cs-h3">Grande Prairie Chamber of Commerce</h3>
+                    <p class="cs-item-text">Active member since 2024.</p>
+                    <a href="https://business.grandeprairiechamber.com/directory/Details/jennifer-chambers-financial-services-3647741" class="cs-link" target="_blank" rel="noopener">Jennifer Chambers in the Grande Prairie Chamber of Commerce directory</a>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-logo-wrapper">
+                        <img class="cs-logo" src="/assets/images/bni-northern-connections-logo.png" alt="BNI Northern Connections logo" width="196" height="140" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="cs-h3">BNI Northern Connections</h3>
+                    <p class="cs-item-text">Member since 2025 and currently Secretary Treasurer on the chapter's Leadership Executive Team.</p>
+                    <a href="https://bnialberta.ca/bninorthernconnections/en-CA/index" class="cs-link" target="_blank" rel="noopener">BNI Northern Connections chapter</a>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-logo-wrapper">
+                        <img class="cs-logo" src="/assets/images/advocis-member-badge.png" alt="Advocis logo" width="140" height="140" loading="lazy" decoding="async">
+                    </div>
+                    <h3 class="cs-h3">Advocis</h3>
+                    <p class="cs-item-text">Provisional member of Advocis, The Financial Advisors Association of Canada. She is licensed and working toward the Professional Financial Advisor (PFA) designation.</p>
+                    <a href="https://www.advocis.ca/find-an-advisor/" class="cs-link" target="_blank" rel="noopener">Find an advisor on Advocis</a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
     {% include 'sections/cta.html' %}
 
