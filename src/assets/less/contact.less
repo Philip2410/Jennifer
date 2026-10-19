@@ -1,8 +1,10 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// PAGE STYLES
-// Interior pages have their own stylesheet for styles that only exist on
-// that page. Any styles shared between pages, including repeated sections,
-// should go into root.less
+// CONTACT PAGE STYLES
+// Sections in page order. The banner, nav and footer live in root.less.
+// contact-1392 reuses the shared CTA styles in root.less (same stitch); the
+// rules below only turn it into the on-page version from Figma 50:506:
+// white section, no footer overlap, tinted form panel with white fields,
+// a Book Online row and the Follow block. steps-2361 is from Assura-Risk-Group.
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
@@ -11,272 +13,277 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #cs-contact-265 {
-        padding: var(--sectionPadding);
+	#contact-1392 {
+		padding: var(--sectionPadding);
+		background-color: #fff;
 
-        .cs-container {
-            width: 100%;
-            /* changes to 1280px at tablet */
-            max-width: (550/16rem);
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
-        }
+		.cs-title {
+			margin-bottom: (32/16rem);
+		}
 
-        .cs-content {
-            /* set text align to left if content needs to be left aligned */
-            text-align: left;
-            width: 100%;
-            margin: 0 0 (32/16rem) 0;
-            display: flex;
-            flex-direction: column;
-            /* centers content horizontally, set to flex-start to left align */
-            align-items: flex-start;
-        }
+		a.cs-link {
+			color: var(--secondary);
+			transition: color 0.3s;
 
-        #cs-form-265 {
-            label {
-                font-size: (16/16rem);
-                line-height: 1.5em;
-                font-weight: 700;
-                /* 12px - 20px */
-                margin-bottom: clamp(0.75rem, 1.3em, 1.25rem);
-                color: var(--headerColor);
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                flex-direction: column;
-            }
+			&:hover {
+				color: var(--primary);
+				text-decoration: underline;
+				text-decoration-thickness: 1px;
+			}
+		}
 
-            .cs-label-message {
-                /* 32px - 48px */
-                margin-bottom: clamp(2rem, 6.3vw, 3rem);
-            }
+		.cs-follow {
+			width: 100%;
+			/* 32px column gap + 16px top padding in the Figma */
+			margin-top: (48/16rem);
+		}
 
-            input,
-            textarea {
-                font-size: (16/16rem);
-                width: 100%;
-                height: (64/16rem);
-                margin-top: (4/16rem);
-                padding-left: (20/16rem);
-                border: 1px solid #b4b2c7;
-                border-radius: (4/16rem);
-                /* prevents border & padding from affecting height */
-                box-sizing: border-box;
-                transition: border 0.3s;
+		.cs-follow-title {
+			font-family: var(--headerFont);
+			font-size: (20/16rem);
+			font-weight: 700;
+			line-height: 1.2em;
+			margin: 0 0 (16/16rem);
+			color: var(--headerColor);
+		}
 
-                &:hover {
-                    border: 1px solid var(--primary);
-                }
-            }
+		.cs-follow-text {
+			margin: 0 0 (16/16rem);
+		}
 
-            textarea {
-                font-family: inherit;
-                padding-top: (20/16rem);
-                min-height: (120/16rem);
-            }
+		.cs-social-ul {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: (12/16rem);
+		}
 
-            .cs-button-solid {
-                width: 100%;
-            }
-        }
+		.cs-social-li {
+			list-style: none;
+		}
 
-        .cs-submit {
-            width: 100%;
-            border: none;
-            &:hover {
-                cursor: pointer;
-            }
-        }
+		.cs-social-link {
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			gap: (12/16rem);
 
-        .cs-right-section {
-            width: 100%;
-            height: (320/16rem);
-            /* 24px - 40px top & bottom */
-            /* 20px - 40px left & right */
-            padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2.5rem);
-            /* prevents padding and border from affecting height and width */
-            box-sizing: border-box;
-            border-radius: (12/16rem);
-            /* cuts off corners on img tag */
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-end;
-            position: relative;
-        }
+			&:hover {
+				.cs-social-text {
+					color: var(--primary);
+				}
 
-        .cs-header {
-            /* 16px - 20px */
-            font-size: clamp(1rem, 3vw, 1.25rem);
-            line-height: 1.2em;
-            font-weight: 700;
-            margin-bottom: (8/16rem);
-            color: var(--bodyTextColorWhite);
-            display: block;
-        }
+				.cs-social-icon-wrapper {
+					border-color: var(--primary);
+				}
+			}
+		}
 
-        .cs-link {
-            /* 16px - 20px */
-            font-size: clamp(1rem, 3vw, 1.25rem);
-            line-height: 1.2em;
-            text-decoration: none;
-            margin-bottom: (20/16rem);
-            color: var(--bodyTextColorWhite);
-            display: block;
-            position: relative;
+		.cs-social-icon-wrapper {
+			width: (48/16rem);
+			height: (48/16rem);
+			background-color: #fff;
+			border: 1px solid var(--primaryLight);
+			border-radius: 50%;
+			box-sizing: border-box;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex: none;
+			transition: border-color 0.3s;
+		}
 
-            &:before {
-                /* Animated underline */
-                content: "";
-                width: 0%;
-                height: 2px;
-                /* current color of the parent */
-                background: currentColor;
-                opacity: 1;
-                position: absolute;
-                display: block;
-                bottom: (-2/16rem);
-                left: 0;
-                transition: width 0.3s;
-            }
+		.cs-social-icon {
+			width: (24/16rem);
+			height: auto;
+			display: block;
+		}
 
-            &:hover {
-                &:before {
-                    width: 100%;
-                }
-            }
+		.cs-social-text {
+			font-size: (16/16rem);
+			line-height: 1.5em;
+			text-decoration: underline;
+			text-decoration-thickness: 1px;
+			text-underline-offset: 0.15em;
+			color: var(--secondary);
+			transition: color 0.3s;
+		}
 
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
+		.cs-form {
+			margin-bottom: 0;
+			background-color: var(--primaryTint);
+		}
 
-        .cs-block {
-            /* sends second address line to the bottom on its own line */
-            display: block;
-        }
+		.cs-select,
+		.cs-input {
+			background-color: #fff;
+		}
 
-        .cs-bg-picture {
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            transition: transform 0.6s;
-
-            &:before {
-                /* background color overlay */
-                content: "";
-                position: absolute;
-                display: block;
-                height: 100%;
-                width: 100%;
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
-                top: 0;
-                left: 0;
-                z-index: 1;
-            }
-
-            img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                height: 100%;
-                width: 100%;
-                /* Makes img tag act as a background image */
-                object-fit: cover;
-            }
-        }
-    }
+		.cs-consent {
+			font-size: (14/16rem);
+			line-height: 1.5em;
+			width: 100%;
+			/* 4px + the form's 12px gap = 16px under the button */
+			margin: (4/16rem) 0 0;
+			color: var(--bodyTextColor);
+		}
+	}
 }
 
-/* Tablet - 700px */
-@media only screen and (min-width: 43.75rem) {
-    #cs-contact-265 {
-        .cs-container {
-            max-width: (1280/16rem);
-        }
-
-        #cs-form-265 {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-
-            label {
-                width: 48%;
-            }
-
-            .cs-label-message {
-                width: 100%;
-            }
-        }
-    }
-}
-
-/* Small Desktop - 1024px */
+/* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #cs-contact-265 {
-        .cs-container {
-            display: grid;
-            grid-template-columns: minmax(0, (630/16rem)) minmax(0, min(40vw, (542/16rem)));
-            justify-content: space-between;
-            align-items: stretch;
-            gap: (80/16rem);
-        }
-
-        .cs-left-section {
-            max-width: (630/16rem);
-        }
-
-        #cs-form-265 {
-            label {
-                width: 100%;
-            }
-        }
-
-        .cs-right-section {
-            /* match the form height instead of a fixed value */
-            height: auto;
-            min-height: 100%;
-            width: 100%;
-            max-width: (542/16rem);
-
-            &:hover {
-                .cs-bg-picture {
-                    transform: scale(1.1);
-                }
-            }
-        }
-
-        .cs-block {
-            /* goes back to inline so it stays "in line" with the rest of the text */
-            display: inline-block;
-        }
-    }
+	#contact-1392 {
+		.cs-form {
+			align-self: flex-start;
+		}
+	}
 }
 
-/* Small Desktop - 1300px */
-@media only screen and (min-width: 81.25rem) {
-    #cs-contact-265 {
-        #cs-form-265 {
-            column-gap: (0/16rem);
-            label {
-                width: 48%;
-                max-width: (305/16rem);
-            }
+/*-- -------------------------- -->
+<---           Steps            -->
+<--- -------------------------- -*/
 
-            .cs-label-message {
-                max-width: 100%;
-            }
-        }
-    }
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+	#steps-2361 {
+		padding: var(--sectionPadding);
+		background-color: var(--primaryTint);
+
+		.cs-container {
+			width: 100%;
+			/* changes to 1280px at tablet */
+			max-width: (584/16rem);
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			/* 48px - 64px */
+			gap: clamp(3rem, 5vw, 4rem);
+		}
+
+		.cs-wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			/* 24px - 32px */
+			gap: clamp(1.5rem, 3vw, 2rem);
+		}
+
+		.cs-content {
+			text-align: left;
+			width: 100%;
+			max-width: (962/16rem);
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.cs-title {
+			max-width: 100%;
+			margin: 0;
+		}
+
+		.cs-card-group {
+			margin: 0;
+			padding: 0;
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			/* 16px - 20px */
+			gap: clamp(1rem, 2.5vw, 1.25rem);
+		}
+
+		.cs-item {
+			list-style: none;
+			/* 24px - 32px */
+			padding: clamp(1.5rem, 3vw, 2rem);
+			box-sizing: border-box;
+			background-color: #fff;
+			display: flex;
+			flex-direction: column;
+			grid-column: span 12;
+			transition: background-color 0.3s;
+		}
+
+		.cs-h3 {
+			/* 20px - 25px */
+			font-size: clamp(1.25rem, 2vw, 1.5625rem);
+			line-height: 1.2em;
+			font-weight: bold;
+			margin: 0 0 (12/16rem);
+			color: var(--headerColor);
+			transition: color 0.3s;
+		}
+
+		.cs-desc {
+			margin: 0;
+			/* 32px - 48px down to the number */
+			padding-bottom: clamp(2rem, 4vw, 3rem);
+		}
+
+		.cs-number {
+			font-family: var(--headerFont);
+			/* 20px - 25px */
+			font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+			font-weight: 700;
+			line-height: 1.2em;
+			margin: auto 0 0;
+			width: 100%;
+			color: var(--secondary);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: (32/16rem);
+		}
+	}
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+	#steps-2361 {
+		.cs-container {
+			max-width: (1280/16rem);
+		}
+
+		.cs-wrapper {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-end;
+		}
+
+		.cs-button-solid {
+			flex: none;
+		}
+
+		.cs-item {
+			grid-column: span 4;
+
+			&:hover {
+				background-color: var(--secondaryLight);
+			}
+		}
+	}
+}
+
+/*-- -------------------------- -->
+<---        Laptop Type         -->
+<--- -------------------------- -*/
+
+/* 1024px - 1760px */
+@media only screen and (min-width: 64rem) and (max-width: 110rem) {
+	#contact-1392 {
+		.cs-follow-title {
+			font-size: (18/16rem);
+		}
+	}
+
+	#steps-2361 {
+		.cs-h3 {
+			font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+		}
+
+		.cs-number {
+			font-size: clamp(1.125rem, 1.8vw, 1.375rem);
+		}
+	}
 }
