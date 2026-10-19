@@ -1,0 +1,282 @@
+---
+title: "Life Insurance | Grande Prairie | Jennifer Chambers"
+description: "Jennifer Chambers compares term, whole life and mortgage life insurance in Grande Prairie from several insurers. Free one-hour meeting. Call now!"
+permalink: "/life-insurance/"
+bannerTopper: "Life insurance"
+bannerTitle: "Life Insurance in Grande Prairie"
+bannerText: 'Life insurance protects your family, your income and the legacy you leave. <a href="/">Jennifer Chambers</a> compares several insurance companies so your coverage fits your budget and goals.'
+bannerImage: "/assets/images/family-bike.jpg"
+bannerAlt: "Life insurance in Grande Prairie, AB"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Banner image preloads (match the banner picture sources) -->
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+
+    <link rel="stylesheet" href="/assets/css/life-insurance.css">
+    <script defer src="/assets/js/faq.js"></script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Service",
+                    "name": "Life Insurance",
+                    "url": "{{ client.domain }}/life-insurance/",
+                    "description": "{{ description }}",
+                    "serviceType": "Life insurance",
+                    "provider": {
+                        "@type": "InsuranceAgency",
+                        "@id": "{{ client.domain }}/#business",
+                        "name": "{{ client.name }}"
+                    },
+                    "areaServed": {
+                        "@type": "City",
+                        "name": "Grande Prairie, AB"
+                    }
+                },
+                {
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "How much life insurance do I need?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "Enough to cover your debts, replace your income for as long as your family would need it, and pay for big goals like your kids' education. Everyone's number is different. Try the Insurance Needs Calculator for a rough idea, then Jennifer Chambers can check it against your real situation." }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Is term or whole life insurance better for a young family?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "It depends on your budget and goals. Term costs less while your kids are young and your mortgage is big. Whole life costs more but lasts your whole life and builds cash value. Many families use both: term for the big years, whole life for lasting coverage and a legacy." }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Can I keep my life insurance if I leave my job?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "Group life insurance through work usually ends or drops when you leave, retire or are laid off. Some plans let you convert it, often at a higher cost. A personal policy you own stays in place no matter where you work, which is why many people keep one alongside their work coverage." }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Do I need a medical exam to get life insurance?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "Not always. It depends on your age, your health and how much coverage you want. Some policies only need a health questionnaire, while larger amounts may need a nurse visit or blood work. Jennifer Chambers will tell you what to expect before you apply." }
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    {% include "sections/banner.html" %}
+
+    <!-- Services 964 -->
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services-964">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Your options</span>
+                <h2 class="cs-title">Term and Whole Life Insurance in Grande Prairie</h2>
+                <p class="cs-text">
+                    There's no single best policy. It depends on what matters most: a low monthly cost, coverage for life, or cash value that grows.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/icon-heart-check.svg" alt="" width="40" height="35" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Term Life Insurance</h3>
+                    <p class="cs-item-text">
+                        Coverage for a set number of years, while the mortgage is big and the kids are young. Lowest cost to start, but pricier at each renewal.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-life.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Whole Life Insurance (Participating)</h3>
+                    <p class="cs-item-text">
+                        Lifetime coverage, guaranteed cash value, level premiums. Dividends can grow your coverage. More: <a href="https://jenn.thelinkbetween.ca/content/insurance-for-your-whole-life" target="_blank" rel="noopener">Insurance for Your Whole Life</a>.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sbs 1982 -->
+    <!-- ============================================ -->
+    <!--                Side By Side                  -->
+    <!-- ============================================ -->
+
+    <section id="sbs-1982">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Mortgage insurance</span>
+                <h2 class="cs-title">Mortgage Life Insurance You Control, Not the Bank</h2>
+                <p class="cs-text-large">
+                    The bank's mortgage insurance is quick to say yes to. A policy you own works differently.
+                </p>
+                <table class="cs-table">
+                    <caption class="cs-sr-only">Bank mortgage insurance compared with a life insurance policy you own</caption>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <th scope="col">Bank's insurance</th>
+                            <th scope="col" class="cs-highlight">A policy you own</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Who Gets Paid</th>
+                            <td>The bank</td>
+                            <td class="cs-highlight">The people you choose</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">The Payout</th>
+                            <td>Shrinks as your balance drops</td>
+                            <td class="cs-highlight">Stays at the amount you picked</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Moving Lenders</th>
+                            <td>Usually stays behind</td>
+                            <td class="cs-highlight">Comes with you</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="cs-text cs-note">
+                    Not the same as CMHC mortgage default insurance, which protects the lender. Pair it with disability or critical illness cover so payments get made if you're sick or hurt.
+                </p>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <div class="cs-image-group">
+                <picture class="cs-background">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/family-at-table.jpg" | resize({ width: 576, height: 960, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/family-at-table.jpg" | resize({ width: 930, height: 1474, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/family-at-table.jpg" | resize({ width: 1000, height: 1159, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/family-at-table.jpg" | resize({ width: 1000, height: 1159, position: "attention" }) | jpeg %}" alt="Mortgage life insurance in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services 1645 -->
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services-1645">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">How she helps</span>
+                <h2 class="cs-title">Why Grande Prairie Families Choose Jennifer Chambers for Life Insurance</h2>
+                <p class="cs-text">Plenty of families here run on one main income, often from physical work or long highway hours. If that income stopped, the bills wouldn't.</p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Sized to Real Numbers</h3>
+                        <p class="cs-item-text">Worked out in a <a href="/financial-needs-analysis/">financial needs analysis</a> from your debts, income and family.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Several Companies Compared</h3>
+                        <p class="cs-item-text">She's independent, so she can shop your case and explain the trade-offs.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Help With Health History</h3>
+                        <p class="cs-item-text">If one company says no or charges more, she looks elsewhere.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Still There Later</h3>
+                        <p class="cs-item-text">As your family, mortgage or business changes, she reviews your coverage.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Faq 993 -->
+    <!-- ============================================ -->
+    <!--                    FAQ                       -->
+    <!-- ============================================ -->
+
+    <section id="faq-993">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Questions and answers</span>
+                <h2 class="cs-title">Life Insurance FAQs in Grande Prairie</h2>
+            </div>
+            <div class="cs-flex-group">
+                <ul class="cs-faq-group">
+                    <li class="cs-faq-item active">
+                        <button class="cs-button" aria-expanded="true">
+                            <span class="cs-button-text">How much life insurance do I need?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Enough to cover your debts, replace your income for as long as your family would need it, and pay for big goals like your kids' education. Everyone's number is different. Try the <a href="https://jenn.thelinkbetween.ca/content/needs-analysis" target="_blank" rel="noopener">Insurance Needs Calculator</a> for a rough idea, then Jennifer Chambers can check it against your real situation.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">Is term or whole life insurance better for a young family?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            It depends on your budget and goals. Term costs less while your kids are young and your mortgage is big. Whole life costs more but lasts your whole life and builds cash value. Many families use both: term for the big years, whole life for lasting coverage and a legacy.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">Can I keep my life insurance if I leave my job?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Group life insurance through work usually ends or drops when you leave, retire or are laid off. Some plans let you convert it, often at a higher cost. A personal policy you own stays in place no matter where you work, which is why many people keep one alongside their work coverage.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">Do I need a medical exam to get life insurance?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Not always. It depends on your age, your health and how much coverage you want. Some policies only need a health questionnaire, while larger amounts may need a nurse visit or blood work. Jennifer Chambers will tell you what to expect before you apply.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    {% include 'sections/cta.html' %}
+
+{% endblock %}
