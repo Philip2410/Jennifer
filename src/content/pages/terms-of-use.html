@@ -1,0 +1,87 @@
+---
+title: "Terms of Use | Jennifer Chambers"
+description: "The terms for using the Jennifer Chambers Financial Services website, including how to read the information on it."
+permalink: "/terms-of-use/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/legal.css">
+{% endblock %}
+
+{% block body %}
+
+    {# Text-only banner-288 (no topper, no button), written inline until sections/banner.html gets topper/button toggles. #}
+    <!-- Banner 288 -->
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <section id="banner-288" class="cs-no-image">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h1 class="cs-title">Terms of Use</h1>
+                <!-- REPLACE: launch date (fill in at launch, see PUNCHLIST) -->
+                <p class="cs-text">
+                    Last updated: [REPLACE: launch date]
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Page 1533 -->
+    <!-- ============================================ -->
+    <!--                 Content Page                 -->
+    <!-- ============================================ -->
+
+    <section id="content-page-1533">
+        <div class="cs-container">
+            <div class="cs-content">
+                <!-- OPEN: plain-language draft, not legal advice. Needs Jennifer / PPI review before launch (via Phil). -->
+                <p>These terms apply when you use this website, run by Jennifer Chambers Financial Services in Grande Prairie, Alberta. By using the site, you agree to them. If you don't agree, please don't use the site.</p>
+
+                <h2>General Information Only</h2>
+                <p>Everything on this website is general information. It isn't legal, tax, accounting, investment or insurance advice for your situation, and it isn't an offer to sell any product. Everyone's needs are different. Talk to Jennifer Chambers, or another qualified professional, before making decisions about your coverage or money.</p>
+
+                <h2>Products and Coverage</h2>
+                <p>Insurance and segregated fund products are provided by insurance companies, not by this website. What a product covers, what it costs and how it pays out are set by its contract, information folder and the insurance company's documents. If anything on this site differs from those documents, the documents apply.</p>
+                <p>Products and coverage are subject to the insurance company's approval and availability.</p>
+
+                <h2>No Advisor Relationship From the Website Alone</h2>
+                <p>Reading this site, sending the contact form or booking a meeting doesn't create an advisor and client relationship. That starts when you and Jennifer Chambers agree to work together.</p>
+
+                <h2>Calculators and Links</h2>
+                <p>This site links to other websites, including Jennifer's article and calculator site, social media and the organizations she belongs to. Calculators give rough estimates based on what you enter, not a recommendation. We don't control other websites and aren't responsible for their content or how they handle your information.</p>
+
+                <h2>Accuracy</h2>
+                <p>We work to keep this site accurate and up to date, but we can't promise it's always complete or current. Rules, products and prices change. We may update or remove content at any time without notice.</p>
+
+                <h2>Your Use of the Site</h2>
+                <p>Please use the site lawfully. Don't try to disrupt it, gain access to parts you aren't meant to, or send spam or harmful code through the contact form.</p>
+
+                <h2>Copyright</h2>
+                <p>The text, logo and design of this site belong to Jennifer Chambers Financial Services or are used with permission. Please don't copy or reuse them without written permission. Logos of other organizations belong to those organizations.</p>
+
+                <h2>Limitation of Liability</h2>
+                <p>To the extent the law allows, Jennifer Chambers Financial Services isn't responsible for any loss that comes from using, or relying on, the information on this website. This doesn't limit any duty owed to you as a client once you're working together, or any rights you have that can't be limited by law.</p>
+
+                <h2>Privacy</h2>
+                <p>Our <a href="/privacy-policy/">Privacy Policy</a> explains what information the site collects and how we use it.</p>
+
+                <h2>Governing Law</h2>
+                <p>These terms are governed by the laws of Alberta and the federal laws of Canada that apply there.</p>
+
+                <h2>Changes</h2>
+                <p>We may update these terms. The "Last updated" date at the top shows when they last changed. Continuing to use the site means you accept the updated terms.</p>
+
+                <h2>Contact</h2>
+                <p>
+                    {{ client.name }}, {{ client.address.city }}, {{ client.address.state }}<br>
+                    Phone: <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a><br>
+                    Email: <a href="mailto:{{ client.email }}">{{ client.email }}</a>
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
