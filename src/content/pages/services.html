@@ -1,0 +1,196 @@
+---
+title: "Insurance Services in Grande Prairie | Jennifer Chambers"
+description: "Jennifer Chambers offers life insurance, savings and insured investments, and a free financial needs analysis in Grande Prairie. Book a free hour."
+permalink: "/services/"
+bannerTopper: "Services"
+bannerTitle: "Insurance and Financial Services in Grande Prairie"
+bannerText: '<a href="/">Jennifer Chambers</a> helps Grande Prairie families and small business owners protect their income, cover the people who depend on them and save with added protection. It starts with one free hour.'
+bannerImage: "/assets/images/family-at-table.jpg"
+bannerAlt: "Insurance services in Grande Prairie, AB"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Banner image preloads (match the banner picture sources) -->
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+
+    <link rel="stylesheet" href="/assets/css/services.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Insurance and financial services in Grande Prairie",
+            "url": "{{ client.domain }}/services/",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "item": { "@type": "Service", "name": "Financial Needs Analysis", "url": "{{ client.domain }}/financial-needs-analysis/", "provider": { "@id": "{{ client.domain }}/#business" }, "areaServed": "Grande Prairie, AB" } },
+                { "@type": "ListItem", "position": 2, "item": { "@type": "Service", "name": "Life Insurance", "url": "{{ client.domain }}/life-insurance/", "provider": { "@id": "{{ client.domain }}/#business" }, "areaServed": "Grande Prairie, AB" } },
+                { "@type": "ListItem", "position": 3, "item": { "@type": "Service", "name": "Disability & Critical Illness Insurance", "provider": { "@id": "{{ client.domain }}/#business" }, "areaServed": "Grande Prairie, AB" } },
+                { "@type": "ListItem", "position": 4, "item": { "@type": "Service", "name": "Health & Dental Insurance", "provider": { "@id": "{{ client.domain }}/#business" }, "areaServed": "Grande Prairie, AB" } },
+                { "@type": "ListItem", "position": 5, "item": { "@type": "Service", "name": "Savings & Investments", "url": "{{ client.domain }}/savings-investments/", "provider": { "@id": "{{ client.domain }}/#business" }, "areaServed": "Grande Prairie, AB" } },
+                { "@type": "ListItem", "position": 6, "item": { "@type": "Service", "name": "Small Business Benefits", "provider": { "@id": "{{ client.domain }}/#business" }, "areaServed": "Grande Prairie, AB" } }
+            ]
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    {% include "sections/banner.html" %}
+
+    <!-- Cta 1692 -->
+    <!-- ============================================ -->
+    <!--                 Start Here                   -->
+    <!-- ============================================ -->
+
+    <section id="cta-1692">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Not sure where to start?</span>
+                <h2 class="cs-title">Begin With a Financial Needs Analysis</h2>
+                <p class="cs-text">
+                    Not sure if you need term or whole life, or how much disability cover is enough? That's normal. Jennifer Chambers looks at your goals, risks and money picture, then tells you which step matters first.
+                </p>
+                <a href="/financial-needs-analysis/" class="cs-button-solid">About the Needs Analysis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services 964 -->
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services-964">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">For you and your family</span>
+                <h2 class="cs-title">Insurance for Grande Prairie Families and Individuals</h2>
+                <p class="cs-text">
+                    She's independent and works with several insurance companies, so your options fit your budget, not one company's price list.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-life.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Life Insurance</h3>
+                    <p class="cs-item-text">
+                        Term and whole life coverage, plus mortgage protection you own instead of the bank.
+                    </p>
+                    <a href="/life-insurance/" class="cs-link">Read More<span class="cs-sr-only"> about Life Insurance</span></a>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-insurance.svg" alt="" width="40" height="35" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Disability &amp; Critical Illness</h3>
+                    <p class="cs-item-text">
+                        Keep the bills paid if an accident or illness stops you working.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-analysis.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Health &amp; Dental</h3>
+                    <p class="cs-item-text">
+                        Personal plans for prescriptions, dental and more when there's no plan at work.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-savings.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Savings &amp; Investments</h3>
+                    <p class="cs-item-text">
+                        Segregated funds and insured investments for steady growth with added protection.
+                    </p>
+                    <a href="/savings-investments/" class="cs-link">Read More<span class="cs-sr-only"> about Savings &amp; Investments</span></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sbs 1982 -->
+    <!-- ============================================ -->
+    <!--                Side By Side                  -->
+    <!-- ============================================ -->
+
+    <section id="sbs-1982">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">For business owners</span>
+                <h2 class="cs-title">Benefits and Protection for Peace Country Small Businesses</h2>
+                <p class="cs-text-large">
+                    Jennifer Chambers specializes in businesses with 1 to 10 employees.
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li">Group health and dental</li>
+                    <li class="cs-li">Health Spending Accounts for incorporated businesses</li>
+                    <li class="cs-li">Key person and corporate disability coverage</li>
+                    <li class="cs-li">Succession planning for family businesses</li>
+                </ul>
+                <a href="/contact/" class="cs-button-solid">Ask About Business Benefits</a>
+            </div>
+            <div class="cs-image-group">
+                <picture class="cs-background">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/team-planning.jpg" | resize({ width: 576, height: 960, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/team-planning.jpg" | resize({ width: 930, height: 1474, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/team-planning.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/team-planning.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | jpeg %}" alt="Small business benefits in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sbsr 1982 -->
+    <!-- ============================================ -->
+    <!--            Side By Side Reverse              -->
+    <!-- ============================================ -->
+
+    <section id="sbsr-1982">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Why it matters here</span>
+                <h2 class="cs-title">Why Grande Prairie Families Use an Independent Insurance Advisor</h2>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <span class="cs-li-title">Coverage That Stays With You</span>
+                        Many in <a href="https://cityofgp.com/culture-community/about-grande-prairie/grande-prairie-guide" target="_blank" rel="noopener">Grande Prairie</a> are self-employed or work in energy, agriculture or the trades. A policy you own outlasts the job.
+                    </li>
+                    <li class="cs-li">
+                        <span class="cs-li-title">Help When It Gets Personal</span>
+                        A health history, a business partner or a blended family is where online quotes fall short.
+                    </li>
+                    <li class="cs-li">
+                        <span class="cs-li-title">Local and in Person</span>
+                        Twenty years in the community, meeting in Grande Prairie or online.
+                    </li>
+                </ul>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <div class="cs-image-group">
+                <picture class="cs-background">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 576, height: 960, position: "center" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 930, height: 1474, position: "center" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 1260, height: 1460, position: "center" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 1260, height: 1460, position: "center" }) | jpeg %}" alt="Independent insurance advisor in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    {% include 'sections/cta.html' %}
+
+{% endblock %}

@@ -2,7 +2,7 @@
     Shared interior banner (Figma component "Interior Banner / Desktop" 34:126, Mobile 34:138).
     hero-288 restyled: pale blue ground, one H1, one Book a Meeting button, optional slim photo.
     Set before the include:
-        bannerTopper, bannerTitle (the page H1), bannerText
+        bannerTopper, bannerTitle (the page H1), bannerText (may hold an inline <a>)
         bannerImage  (optional, e.g. "/assets/images/jennifer-chambers-headshot.jpg"); leave unset for the text-only version
         bannerAlt    (alt text for the photo, "[Service] in [City], [ST]")
     Pages with a photo also add the three AVIF preloads in their head block (copy About's).
@@ -18,7 +18,7 @@
             <span class="cs-topper">{{ bannerTopper }}</span>
             <h1 class="cs-title">{{ bannerTitle }}</h1>
             <p class="cs-text">
-                {{ bannerText }}
+                {{ bannerText | safe }}
             </p>
             <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
         </div>
