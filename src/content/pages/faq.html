@@ -1,0 +1,119 @@
+---
+title: "Insurance & Financial FAQs | Grande Prairie | J. Chambers"
+description: "Answers from Jennifer Chambers on cost, life insurance after a health scare, meeting online and more for Grande Prairie families. Call now!"
+permalink: "/faq/"
+bannerTopper: "Questions and answers"
+bannerTitle: "Insurance and Financial Planning FAQs in Grande Prairie"
+bannerText: "Straight answers to the questions people ask most before their first meeting. Don't see yours? Call (780) 897-3212 or book a free hour and ask in person."
+bannerImage: "/assets/images/handshake.jpg"
+bannerAlt: "Insurance and financial planning advice in Grande Prairie, AB"
+# One list feeds the accordions and the FAQPage schema, so they never disagree.
+# Numbering is continuous (1 to 14): faq.less starts each group's counter where the last one ended.
+faqGroups:
+    - id: "faq-993"
+      title: "Working With Jennifer Chambers"
+      items:
+          - q: "Can I meet in person, or only online?"
+            a: 'Both. <a href="/">Jennifer Chambers</a> meets clients in person in Grande Prairie and online by video, so you can pick whatever is easier. Plenty of people start online and meet in person later, or the other way around.'
+            open: true
+          - q: "How much does it cost to work with a financial advisor in Grande Prairie?"
+            a: "There is no upfront planning fee. Jennifer Chambers is paid by commission on the products you actually put in place. The first meeting is about an hour and free, so you can see if the fit is right before anything is sold."
+          - q: "How long does the process take?"
+            a: "The first meeting takes about an hour. After that it depends on what you need. Some coverage can be set up quickly, while applications that need medical information take longer because the insurance company has to review them. Jennifer Chambers will tell you what to expect before you apply."
+          - q: "Why work with a person instead of buying insurance online?"
+            a: "Buying online is easy until a claim, a health history or an estate gets complicated. A person compares several insurance companies for you, explains the trade-offs and keeps your plan and policies lined up. She's also the one you call when life changes or you need to make a claim."
+          - q: "What happens at the first meeting?"
+            a: 'You talk about your goals, family, work, debts and any coverage you already have. Jennifer Chambers listens first, then explains what she sees and the first step she''d take. You don''t need to prepare much, and you won''t be asked to sign anything. See <a href="/financial-needs-analysis/">how a financial needs analysis works</a>.'
+          - q: "Do I need to live in Grande Prairie to work with Jennifer?"
+            a: "No. She's based in Grande Prairie and works with people across the Peace Country, and online meetings make distance less of an issue."
+    - id: "faq-993-insurance"
+      title: "Insurance Questions"
+      items:
+          - q: "Can you help with life insurance after a health scare?"
+            a: 'Often, yes. Insurance companies look at health histories differently, so one company''s no can be another''s yes, sometimes at a higher price or with an exclusion. Jennifer Chambers works with several insurers, including some that take hard-to-insure cases, and can look for the best fit. More on <a href="/life-insurance/">life insurance options</a>.'
+          - q: "What is the difference between a will and insurance when someone dies?"
+            a: "A will says who gets what from your estate. Life insurance creates money, usually paid straight to the person you name, outside your estate. They work together: insurance can cover debts and bills so your will can do what you intended. Jennifer Chambers doesn't write wills, so for that you'll need a lawyer."
+          - q: "What's the difference between term and permanent life insurance?"
+            a: "Term covers you for a set number of years and costs less to start. Permanent coverage, like whole life, lasts your whole life and can build cash value. Many families use a mix."
+          - q: "How do I make a claim?"
+            a: "Contact Jennifer Chambers first. She'll help you find the right forms and walk you through what the insurance company needs, so you're not doing it alone at a hard time."
+    - id: "faq-993-business"
+      title: "For Business Owners"
+      items:
+          - q: "Do you work with very small businesses?"
+            a: "Yes, that's her specialty. Jennifer Chambers works with small and micro businesses with 1 to 10 employees, from a first benefits plan or Health Spending Account to key person coverage."
+          - q: "Can my corporation own my insurance?"
+            a: "In many cases, yes. Corporate-owned life, disability and critical illness coverage is common for business owners, and it changes who pays and who receives the money. Talk it through with Jennifer Chambers and your accountant before deciding."
+    - id: "faq-993-savings"
+      title: "Savings and Investments"
+      items:
+          - q: "Is my money safe in a segregated fund?"
+            a: 'Segregated funds come with guarantees on a set portion of your deposits, usually 75% to 100%, at maturity or when you die. The value can still move up and down in between. More on <a href="/savings-investments/">segregated funds and savings</a>.'
+          - q: "Do you sell stocks or mutual funds?"
+            a: "No. Jennifer Chambers focuses on insured savings and investments. If you'd like some higher-risk investing, she can refer you to partners she has already vetted."
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Banner image preloads (match the banner picture sources) -->
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+
+    <link rel="stylesheet" href="/assets/css/faq.css">
+    <script defer src="/assets/js/faq.js"></script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "url": "{{ client.domain }}/faq/",
+            "mainEntity": [
+                {%- for group in faqGroups %}{% set outer = loop %}{% for item in group.items %}
+                {
+                    "@type": "Question",
+                    "name": {{ item.q | dump | safe }},
+                    "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | striptags | dump | safe }} }
+                }{% if not (outer.last and loop.last) %},{% endif %}
+                {%- endfor %}{% endfor %}
+            ]
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    {% include "sections/banner.html" %}
+
+    {% for group in faqGroups %}
+    <!-- Faq 993 -->
+    <!-- ============================================ -->
+    <!--                    FAQ                       -->
+    <!-- ============================================ -->
+
+    <section id="{{ group.id }}">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">{{ group.title }}</h2>
+            </div>
+            <div class="cs-flex-group">
+                <ul class="cs-faq-group">
+                    {%- for item in group.items %}
+                    <li class="cs-faq-item{{ ' active' if item.open }}">
+                        <button class="cs-button" aria-expanded="{{ 'true' if item.open else 'false' }}">
+                            <span class="cs-button-text">{{ item.q }}</span>
+                        </button>
+                        <p class="cs-item-p">
+                            {{ item.a | safe }}
+                        </p>
+                    </li>
+                    {%- endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+
+    {% include 'sections/cta.html' %}
+{% endblock %}
