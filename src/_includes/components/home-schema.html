@@ -1,35 +1,79 @@
+{# Homepage structured data. Only verified facts. No AggregateRating until real reviews exist. #}
 <script type="application/ld+json">
     {
-        "@context": "http://schema.org",
-        "@type": "LocalBusiness",
-        "name": "{{ client.name }}",
-        {% if preloadImg %}"image": "{{ client.domain }}{{ preloadImg }}",{% endif %}
-        {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
-        {% if client.email %}"email": "{{ client.email }}",{% endif %}
-        {% if client.address %}
-            "address": {
-                "@type": "PostalAddress" {%- if client.address.lineOne -%},
-                    "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
-                {%- endif -%}
-                {%- if client.address.city -%},
-                    "addressLocality": "{{ client.address.city }}"
-                {%- endif -%}
-                {%- if client.address.state -%},
-                    "addressRegion": "{{ client.address.state }}"
-                {%- endif -%}
-                {%- if client.address.zip -%},
-                    "postalCode": "{{ client.address.zip }}"
-                {%- endif -%}
-                {%- if client.address.country -%},
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "InsuranceAgency",
+                "@id": "{{ client.domain }}/#business",
+                "name": "{{ client.name }}",
+                "description": "Jennifer Chambers is a financial advisor in Grande Prairie helping Peace Country families with insurance and investments.",
+                "image": "{{ client.domain }}/assets/images/jennifer-chambers-headshot.jpg",
+                "logo": "{{ client.domain }}/assets/svgs/logo.svg",
+                "telephone": "{{ client.phoneFormatted }}",
+                "email": "{{ client.email }}",
+                "url": "{{ client.domain }}/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "{{ client.address.city }}",
+                    "addressRegion": "{{ client.address.state }}",
                     "addressCountry": "{{ client.address.country }}"
-                {%- endif -%}
+                },
+                "areaServed": [
+                    { "@type": "City", "name": "Grande Prairie, AB" },
+                    { "@type": "AdministrativeArea", "name": "Peace Country, AB" }
+                ],
+                "founder": {
+                    "@type": "Person",
+                    "name": "{{ client.personName }}",
+                    "jobTitle": "Insurance Advisor"
+                },
+                "sameAs": [{%- for platform, url in client.socials -%}{% if not loop.first %}, {% endif %}"{{ url }}"{%- endfor -%}],
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Financial services",
+                    "itemListElement": [
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Financial Needs Analysis", "url": "{{ client.domain }}/financial-needs-analysis/" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Insurance", "url": "{{ client.domain }}/services/" } },
+                        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Savings & Investments", "url": "{{ client.domain }}/savings-investments/" } }
+                    ]
+                }
             },
-        {% endif %}
-        {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
-        {% if client.socials %}
-            "sameAs": [{%- for platform, url in client.socials -%}
-                    {% if not loop.first %},{% endif %}"{{ url }}"
-                {%- endfor -%}]
-        {% endif %}
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Can I meet in person, or only online?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Both. Jennifer Chambers meets clients in person in Grande Prairie and online by video, so you can pick whatever is easier. Plenty of people start online and meet in person later, or the other way around." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How much does it cost to work with a financial advisor in Grande Prairie?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "There is no upfront planning fee. Jennifer Chambers is paid by commission on the products you actually put in place. The first meeting is about an hour and free, so you can see if the fit is right before anything is sold." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can you help with life insurance after a health scare?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. Insurance companies look at health histories differently, so one company's no can be another's yes, sometimes at a higher price or with an exclusion. Jennifer Chambers works with several insurers, including some that take hard-to-insure cases, and can look for the best fit." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long does the process take?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "The first meeting takes about an hour. After that it depends on what you need. Some coverage can be set up quickly, while applications that need medical information take longer because the insurance company has to review them. Jennifer Chambers will tell you what to expect before you apply." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Why work with a person instead of buying insurance online?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Buying online is easy until a claim, a health history or an estate gets complicated. A person compares several insurance companies for you, explains the trade-offs and keeps your plan and policies lined up. She's also the one you call when life changes or you need to make a claim." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the difference between a will and insurance when someone dies?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "A will says who gets what from your estate. Life insurance creates money, usually paid straight to the person you name, outside your estate. They work together: insurance can cover debts and bills so your will can do what you intended. Jennifer Chambers doesn't write wills, so for that you'll need a lawyer." }
+                    }
+                ]
+            }
+        ]
     }
 </script>
