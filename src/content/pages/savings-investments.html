@@ -1,0 +1,215 @@
+---
+title: "Segregated Funds & Savings | Grande Prairie | J. Chambers"
+description: "Jennifer Chambers offers segregated funds and insured savings in Grande Prairie for growth with added protection. Free one-hour meeting. Call now!"
+permalink: "/savings-investments/"
+bannerTopper: "Savings & Investments"
+bannerTitle: "Savings and Insured Investments in Grande Prairie"
+bannerText: 'Grow your money without losing sleep over it. <a href="/">Jennifer Chambers</a> offers segregated funds and other insured savings options with growth potential and built-in protection.'
+bannerImage: "/assets/images/investment-chart.jpg"
+bannerAlt: "Insured investments in Grande Prairie, AB"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Banner image preloads (match the banner picture sources) -->
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+
+    <link rel="stylesheet" href="/assets/css/savings-investments.css">
+    <script defer src="/assets/js/faq.js"></script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Service",
+                    "name": "Insured Investments",
+                    "serviceType": "Segregated funds and insured savings",
+                    "url": "{{ client.domain }}/savings-investments/",
+                    "description": "{{ description }}",
+                    "provider": {
+                        "@type": "InsuranceAgency",
+                        "@id": "{{ client.domain }}/#business",
+                        "name": "{{ client.name }}"
+                    },
+                    "areaServed": { "@type": "City", "name": "Grande Prairie, AB" }
+                },
+                {
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "What is a segregated fund?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "It's an investment fund offered by an insurance company as an insurance contract. Your money is invested in a pool of stocks, bonds or both, like a mutual fund, but with guarantees on your deposits and a named beneficiary. It's built for long-term saving and estate planning." }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Are segregated funds guaranteed?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "Partly. Depending on the contract, 75% to 100% of your deposits are guaranteed at maturity, often after 10 years or more, or when you die. The value in between can still rise and fall with the markets, so they suit money you won't need right away." }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Do segregated funds avoid probate in Alberta?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "With a named beneficiary, the money is paid directly to that person instead of going through your estate. Alberta's probate fees are low compared with other provinces, so the bigger benefits here are speed and privacy: your family gets the money sooner, and it isn't part of the public probate record." }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Can you help with stocks or higher-risk investments?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "Not directly. Jennifer Chambers focuses on insured, steady-growth options. If you want a portion in higher-risk investing, she'll refer you to partners she has already vetted, and can keep that part in mind when planning the rest." }
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    {% include "sections/banner.html" %}
+
+    <!-- Sbs 1982 -->
+    <!-- ============================================ -->
+    <!--                Side By Side                  -->
+    <!-- ============================================ -->
+
+    <section id="sbs-1982">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Her approach</span>
+                <h2 class="cs-title">Safety and Steady Growth First for Peace Country Families</h2>
+                <p class="cs-text-large">
+                    When your income rides on energy, farming or your own business, you know how fast things swing. Jennifer Chambers starts with protection, then growth, from simple savings to insured investment funds with guarantees.
+                </p>
+                <p class="cs-text">
+                    Some people also build savings inside <a href="/life-insurance/">whole life insurance</a>. Want some higher-risk investing? She'll connect you with partners she has already vetted.
+                </p>
+            </div>
+            <div class="cs-image-group">
+                <picture class="cs-background">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/family-at-table.jpg" | resize({ width: 576, height: 960, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/family-at-table.jpg" | resize({ width: 930, height: 1474, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/family-at-table.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/family-at-table.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | jpeg %}" alt="Savings and investment planning in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services 1645 -->
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services-1645">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Segregated funds</span>
+                <h2 class="cs-title">What Segregated Funds Offer Grande Prairie Savers</h2>
+                <p class="cs-text">A segregated fund is an investment fund offered through an insurance company: market growth, with added protection. Read <a href="https://jenn.thelinkbetween.ca/content/your-segue-into-segregated-funds" target="_blank" rel="noopener">Your Segue into Segregated Funds</a>.</p>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Guarantees on Your Deposits</h3>
+                        <p class="cs-item-text">Depending on the contract, 75% to 100% is guaranteed at maturity or death, even if markets fall.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Paid Straight to Your Family</h3>
+                        <p class="cs-item-text">With a named beneficiary, money goes directly to them, outside your estate.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Possible Creditor Protection</h3>
+                        <p class="cs-item-text">In some situations, which matters to business owners and professionals.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">The Trade-off</h3>
+                        <p class="cs-item-text">Fees are usually higher than mutual funds. She'll tell you plainly whether it's worth it.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Faq 993 -->
+    <!-- ============================================ -->
+    <!--                    FAQ                       -->
+    <!-- ============================================ -->
+
+    <section id="faq-993">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Questions and answers</span>
+                <h2 class="cs-title">Segregated Fund FAQs in Grande Prairie</h2>
+            </div>
+            <div class="cs-flex-group">
+                <ul class="cs-faq-group">
+                    <li class="cs-faq-item active">
+                        <button class="cs-button" aria-expanded="true">
+                            <span class="cs-button-text">What is a segregated fund?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            It's an investment fund offered by an insurance company as an insurance contract. Your money is invested in a pool of stocks, bonds or both, like a mutual fund, but with guarantees on your deposits and a named beneficiary. It's built for long-term saving and estate planning.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">Are segregated funds guaranteed?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Partly. Depending on the contract, 75% to 100% of your deposits are guaranteed at maturity, often after 10 years or more, or when you die. The value in between can still rise and fall with the markets, so they suit money you won't need right away.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">Do segregated funds avoid probate in Alberta?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            With a named beneficiary, the money is paid directly to that person instead of going through your estate. Alberta's probate fees are low compared with other provinces, so the bigger benefits here are speed and privacy: your family gets the money sooner, and it isn't part of the public probate record.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">Can you help with stocks or higher-risk investments?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Not directly. Jennifer Chambers focuses on insured, steady-growth options. If you want a portion in higher-risk investing, she'll refer you to partners she has already vetted, and can keep that part in mind when planning the rest.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    {% include 'sections/cta.html' %}
+
+{% endblock %}
