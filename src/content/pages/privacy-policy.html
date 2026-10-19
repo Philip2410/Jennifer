@@ -2,6 +2,10 @@
 title: "Privacy Policy | Jennifer Chambers"
 description: "How Jennifer Chambers Financial Services collects, uses and protects personal information shared through this website."
 permalink: "/privacy-policy/"
+bannerTitle: "Privacy Policy"
+bannerText: "Last updated: [REPLACE: launch date]"
+bannerShowTopper: false
+bannerShowButton: false
 ---
 
 {% extends "layouts/base.html" %}
@@ -12,23 +16,7 @@ permalink: "/privacy-policy/"
 
 {% block body %}
 
-    {# Text-only banner-288 (no topper, no button), written inline until sections/banner.html gets topper/button toggles. #}
-    <!-- Banner 288 -->
-    <!-- ============================================ -->
-    <!--                   Banner                     -->
-    <!-- ============================================ -->
-
-    <section id="banner-288" class="cs-no-image">
-        <div class="cs-container">
-            <div class="cs-content">
-                <h1 class="cs-title">Privacy Policy</h1>
-                <!-- REPLACE: launch date (fill in at launch, see PUNCHLIST) -->
-                <p class="cs-text">
-                    Last updated: [REPLACE: launch date]
-                </p>
-            </div>
-        </div>
-    </section>
+    {% include "sections/banner.html" %}
 
     <!-- Content Page 1533 -->
     <!-- ============================================ -->
@@ -39,7 +27,7 @@ permalink: "/privacy-policy/"
         <div class="cs-container">
             <div class="cs-content">
                 <!-- OPEN: plain-language draft, not legal advice. Needs Jennifer / PPI review before launch (via Phil). -->
-                <p>Jennifer Chambers Financial Services ("we", "us") is an insurance practice in Grande Prairie, Alberta. This policy explains what personal information this website collects, why, and what we do with it. We follow Alberta's <em>Personal Information Protection Act</em> (PIPA).</p>
+                <p>Jennifer Chambers Financial Services ("we", "us") is an insurance practice in Grande Prairie, Alberta. This policy explains what personal information this website collects, why, and what we do with it. We follow Alberta's Personal Information Protection Act (PIPA).</p>
                 <p>This policy covers the website only. When you apply for insurance or an investment product, the insurance company collects information too, and its own privacy policy also applies.</p>
 
                 <h2>What We Collect</h2>

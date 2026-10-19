@@ -3,6 +3,12 @@ title: "Message Sent | Jennifer Chambers"
 description: "Thanks for contacting Jennifer Chambers Financial Services in Grande Prairie. Your message has been sent."
 permalink: "/success/"
 eleventyExcludeFromCollections: true
+bannerTopper: "Message sent"
+bannerTitle: "Thanks for Getting in Touch"
+eleventyComputed:
+    bannerText: "Your message is on its way to Jennifer Chambers, and she'll get back to you soon. If it's urgent, call <a href=\"tel:{{ client.phoneForTel }}\">{{ client.phoneFormatted }}</a>."
+bannerButtonLabel: "Back to Home"
+bannerButtonHref: "/"
 ---
 
 {% extends "layouts/base.html" %}
@@ -13,22 +19,5 @@ eleventyExcludeFromCollections: true
 
 {% block body %}
 
-    {# Text-only banner-288 with Back to Home in place of Book a Meeting, written inline until sections/banner.html gets a button toggle. #}
-    <!-- Banner 288 -->
-    <!-- ============================================ -->
-    <!--                   Banner                     -->
-    <!-- ============================================ -->
-
-    <section id="banner-288" class="cs-no-image">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Message sent</span>
-                <h1 class="cs-title">Thanks for Getting in Touch</h1>
-                <p class="cs-text">
-                    Your message is on its way to Jennifer Chambers, and she'll get back to you soon. If it's urgent, call <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>.
-                </p>
-                <a href="/" class="cs-button-solid">Back to Home</a>
-            </div>
-        </div>
-    </section>
+    {% include "sections/banner.html" %}
 {% endblock %}

@@ -2,6 +2,10 @@
 title: "Terms of Use | Jennifer Chambers"
 description: "The terms for using the Jennifer Chambers Financial Services website, including how to read the information on it."
 permalink: "/terms-of-use/"
+bannerTitle: "Terms of Use"
+bannerText: "Last updated: [REPLACE: launch date]"
+bannerShowTopper: false
+bannerShowButton: false
 ---
 
 {% extends "layouts/base.html" %}
@@ -12,23 +16,7 @@ permalink: "/terms-of-use/"
 
 {% block body %}
 
-    {# Text-only banner-288 (no topper, no button), written inline until sections/banner.html gets topper/button toggles. #}
-    <!-- Banner 288 -->
-    <!-- ============================================ -->
-    <!--                   Banner                     -->
-    <!-- ============================================ -->
-
-    <section id="banner-288" class="cs-no-image">
-        <div class="cs-container">
-            <div class="cs-content">
-                <h1 class="cs-title">Terms of Use</h1>
-                <!-- REPLACE: launch date (fill in at launch, see PUNCHLIST) -->
-                <p class="cs-text">
-                    Last updated: [REPLACE: launch date]
-                </p>
-            </div>
-        </div>
-    </section>
+    {% include "sections/banner.html" %}
 
     <!-- Content Page 1533 -->
     <!-- ============================================ -->

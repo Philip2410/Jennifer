@@ -5,6 +5,9 @@
         bannerTopper, bannerTitle (the page H1), bannerText (may hold an inline <a>)
         bannerImage  (optional, e.g. "/assets/images/jennifer-chambers-headshot.jpg"); leave unset for the text-only version
         bannerAlt    (alt text for the photo, "[Service] in [City], [ST]")
+        bannerShowTopper: false   hides the topper (default on)
+        bannerShowButton: false   hides the button (default on)
+        bannerButtonLabel / bannerButtonHref   swap Book a Meeting for another button (e.g. Success: Back to Home)
     Pages with a photo also add the three AVIF preloads in their head block (copy About's).
 #}
 <!-- Banner 288 -->
@@ -15,12 +18,20 @@
 <section id="banner-288" class="{{ 'cs-no-image' if not bannerImage }}">
     <div class="cs-container">
         <div class="cs-content">
+            {% if bannerShowTopper !== false and bannerTopper %}
             <span class="cs-topper">{{ bannerTopper }}</span>
+            {% endif %}
             <h1 class="cs-title">{{ bannerTitle }}</h1>
             <p class="cs-text">
                 {{ bannerText | safe }}
             </p>
+            {% if bannerShowButton !== false %}
+            {% if bannerButtonHref %}
+            <a href="{{ bannerButtonHref }}" class="cs-button-solid">{{ bannerButtonLabel }}</a>
+            {% else %}
             <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            {% endif %}
+            {% endif %}
         </div>
         {% if bannerImage %}
         <!--Banner Image-->
