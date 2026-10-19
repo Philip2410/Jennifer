@@ -1,0 +1,90 @@
+{# Contact 1392 (cta-footer-1392 in Figma). Pages can override the left-hand copy by setting ctaTopper, ctaTitle, ctaText before the include. #}
+<!-- Contact 1392 -->
+<!-- ============================================ -->
+<!--                   Contact                    -->
+<!-- ============================================ -->
+
+<section id="contact-1392">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">{{ ctaTopper or "Contact Us" }}</span>
+            <h2 class="cs-title">{{ ctaTitle or "Book a Meeting in Grande Prairie" }}</h2>
+            <p class="cs-text">
+                {{ ctaText or "Want to see if it is a fit? Book a free one-hour meeting with Jennifer Chambers, online or in Grande Prairie." }}
+            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img aria-hidden="true" src="/assets/svgs/call.svg" alt="" class="cs-icon" width="24" height="24" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Phone</span>
+                        <a href="tel:{{ client.phoneForTel }}" class="cs-link">{{ client.phoneFormatted }}</a>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img aria-hidden="true" src="/assets/svgs/message.svg" alt="" class="cs-icon" width="24" height="24" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Email</span>
+                        <a href="mailto:{{ client.email }}" class="cs-link">{{ client.email }}</a>
+                    </div>
+                </li>
+                <li class="cs-li">
+                    <picture class="cs-icon-wrapper">
+                        <img aria-hidden="true" src="/assets/svgs/location.svg" alt="" class="cs-icon" width="24" height="24" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="cs-flex-group">
+                        <span class="cs-header">Location</span>
+                        <span class="cs-link">{{ client.address.city }}, {{ client.address.state }}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--Form-->
+        <form class="cs-form" id="cs-form-1392" name="Contact Form" method="post" action="/success/" data-netlify="true" netlify-honeypot="bot-field">
+            <h3 class="cs-h3">Make Appointment</h3>
+            <p class="cs-form-text">
+                Book a free one-hour introductory meeting to go over your goals and see whether Jennifer Chambers is the right person for the next step.
+            </p>
+            <label class="cs-label cs-honeypot">
+                Leave this field empty
+                <input name="bot-field" tabindex="-1" autocomplete="off">
+            </label>
+            <label class="cs-label">
+                Name
+                <input class="cs-input" required type="text" id="name-1392" name="name" placeholder="Name" autocomplete="name">
+            </label>
+            <label class="cs-label cs-email">
+                Email
+                <input class="cs-input" required type="email" id="email-1392" name="email" placeholder="Email" autocomplete="email">
+            </label>
+            <label class="cs-label cs-phone">
+                Phone
+                <input class="cs-input" type="tel" id="phone-1392" name="phone" placeholder="Phone" autocomplete="tel">
+            </label>
+            <label class="cs-label" for="service-1392">
+                Service
+                <div class="cs-dropdown">
+                    <select class="cs-select" id="service-1392" name="service" required>
+                        <option value="" disabled selected>Service</option>
+                        <option value="Financial Needs Analysis">Financial Needs Analysis</option>
+                        <option value="Life Insurance">Life Insurance</option>
+                        <option value="Disability and Critical Illness Insurance">Disability &amp; Critical Illness Insurance</option>
+                        <option value="Health and Dental Insurance">Health &amp; Dental Insurance</option>
+                        <option value="Small Business Benefits">Small Business Benefits</option>
+                        <option value="Savings and Investments">Savings &amp; Investments</option>
+                        <option value="Not sure yet">Not sure yet</option>
+                    </select>
+                    <img src="/assets/svgs/down-arrow.svg" alt="" loading="lazy" decoding="async" width="24" height="24" aria-hidden="true">
+                </div>
+            </label>
+            <label class="cs-label">
+                Message
+                <textarea class="cs-input cs-textarea" required name="message" id="message-1392" placeholder="Message"></textarea>
+            </label>
+            <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
+        </form>
+    </div>
+</section>

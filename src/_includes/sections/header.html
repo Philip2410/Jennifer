@@ -1,0 +1,84 @@
+{% set servicePages = [
+    { name: "Financial Needs Analysis", url: "/financial-needs-analysis/" },
+    { name: "Life Insurance", url: "/life-insurance/" },
+    { name: "Disability & Critical Illness", url: "/disability-critical-illness-insurance/" },
+    { name: "Health & Dental", url: "/health-dental-insurance/" },
+    { name: "Small Business Benefits", url: "/small-business-benefits/" },
+    { name: "Savings & Investments", url: "/savings-investments/" }
+] %}
+{% set servicesActive = page.url in ["/services/", "/financial-needs-analysis/", "/life-insurance/", "/disability-critical-illness-insurance/", "/health-dental-insurance/", "/small-business-benefits/", "/savings-investments/"] %}
+
+<!-- Header 757 -->
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
+<header id="cs-navigation">
+    <div class="cs-container">
+        <!--Nav Logo-->
+        <a href="/" class="cs-logo" aria-label="Return to {{ client.name }} home page">
+            <img src="/assets/svgs/logo.svg" alt="" width="183" height="53" aria-hidden="true" decoding="async">
+        </a>
+        <!--Navigation List-->
+        <nav class="cs-nav" aria-label="main navigation">
+            <!--Mobile Nav Toggle-->
+            <button class="cs-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="cs-ul-wrapper" aria-label="mobile menu toggle" aria-haspopup="menu">
+                <span class="cs-box" aria-hidden="true">
+                    <span class="cs-line cs-line1"></span>
+                    <span class="cs-line cs-line2"></span>
+                    <span class="cs-line cs-line3"></span>
+                </span>
+            </button>
+            <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how many there are-->
+            <div class="cs-ul-wrapper" id="cs-ul-wrapper">
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <a href="/" class="cs-li-link {{ 'cs-active' if page.url == '/' }}" {% if page.url == '/' %}aria-current="page"{% endif %}>
+                            Home
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="/about/" class="cs-li-link {{ 'cs-active' if page.url == '/about/' }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>
+                            About
+                        </a>
+                    </li>
+                    <li class="cs-li cs-dropdown">
+                        <button class="cs-li-link cs-dropdown-toggle {{ 'cs-active' if servicesActive }}" aria-haspopup="menu" aria-expanded="false" id="services-dropdown-toggle">
+                            Services
+                            <img class="cs-drop-icon" src="/assets/svgs/down-arrow.svg" alt="" width="24" height="24" decoding="async" aria-hidden="true">
+                        </button>
+                        <ul class="cs-drop-ul" aria-labelledby="services-dropdown-toggle">
+                            {% for item in servicePages %}
+                            <li class="cs-drop-li">
+                                <a href="{{ item.url }}" class="cs-li-link cs-drop-link {{ 'cs-active' if page.url == item.url }}">{{ item.name }}</a>
+                            </li>
+                            {% endfor %}
+                            <li class="cs-drop-li">
+                                <a href="/services/" class="cs-li-link cs-drop-link {{ 'cs-active' if page.url == '/services/' }}">All Services</a>
+                            </li>
+                        </ul>
+                    </li>
+                    {# Reviews stays out of the live nav until real reviews exist (Elliot's sitemap). Restore this item when /reviews/ ships:
+                    <li class="cs-li">
+                        <a href="/reviews/" class="cs-li-link {{ 'cs-active' if page.url == '/reviews/' }}">Reviews</a>
+                    </li>
+                    #}
+                    <li class="cs-li">
+                        <a href="/faq/" class="cs-li-link {{ 'cs-active' if page.url == '/faq/' }}" {% if page.url == '/faq/' %}aria-current="page"{% endif %}>
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="cs-li">
+                        <a href="/contact/" class="cs-li-link {{ 'cs-active' if page.url == '/contact/' }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>
+                            Contact
+                        </a>
+                    </li>
+                    <li class="cs-li cs-mobile-button">
+                        <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <a href="{{ client.bookingLink }}" class="cs-button-outline cs-nav-button" target="_blank" rel="noopener">Book a Meeting</a>
+    </div>
+</header>

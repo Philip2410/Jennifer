@@ -1,6 +1,129 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // CRITICAL PAGE STYLES
-// Above-the-fold and high-priority styles for the home page's landing section.
-// Put the first section of the home page in here, so it loads immediately.
-// The rest of the home page styles in local.css will be deferred and
+// Above-the-fold styles for the home page's landing section (hero-288).
+// The rest of the home page styles live in local.less and load deferred.
 // ─────────────────────────────────────────────────────────────────────────────
+
+/*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+	#hero-288 {
+		/* 116px - 164px top */
+		/* 60px - 100px bottom */
+		padding: clamp(7.25rem, 16.82vw, 10.25rem) (16/16rem) clamp(3.75rem, 7.82vw, 6.25rem);
+		background-color: #fff;
+		position: relative;
+
+		.cs-container {
+			width: 100%;
+			max-width: (1280/16rem);
+			margin: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			/* 40px - 48px */
+			row-gap: clamp(2.5rem, 6vw, 3rem);
+		}
+
+		.cs-content {
+			text-align: left;
+			width: 100%;
+			max-width: (585/16rem);
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		.cs-title {
+			/* 39px - 72px (Figma Display/D2) */
+			font-size: clamp(2.4375rem, 5vw, 4.5rem);
+			line-height: 1.2em;
+			max-width: 12ch;
+			margin: 0 0 (16/16rem);
+			color: var(--headerColor);
+		}
+
+		.cs-text {
+			/* 16px - 20px (Figma Body-L) */
+			font-size: clamp(1rem, 1.5vw, 1.25rem);
+			line-height: 1.5em;
+			width: 100%;
+			max-width: (522/16rem);
+			margin: 0;
+			/* 28px - 32px */
+			margin-bottom: clamp(1.75rem, 3.92vw, 2rem);
+			color: var(--bodyTextColor);
+		}
+
+		.cs-picture {
+			width: 100%;
+			max-width: (585/16rem);
+			/* 380px - 453px */
+			height: clamp(23.75rem, 59vw, 28.3215rem);
+			/* clips the img tag corners */
+			overflow: hidden;
+			display: block;
+			position: relative;
+
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				/* makes image act as a background image */
+				object-fit: cover;
+				object-position: top;
+			}
+		}
+	}
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#hero-288 {
+		.cs-container {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: stretch;
+			column-gap: (100/16rem);
+		}
+
+		.cs-content {
+			width: 40%;
+			padding: (48/16rem) 0;
+			/* prevents flex-box from squishing it */
+			flex: none;
+			align-self: center;
+		}
+
+		.cs-picture {
+			max-width: (630/16rem);
+			height: auto;
+			/* 623px - 814px */
+			min-height: clamp(38.9375rem, 60vw, 50.875rem);
+		}
+	}
+}
+
+/*-- -------------------------- -->
+<---        Laptop Type         -->
+<--- -------------------------- -*/
+
+/* 1024px - 1760px */
+@media only screen and (min-width: 64rem) and (max-width: 110rem) {
+	#hero-288 {
+		.cs-title {
+			font-size: clamp(2.25rem, 4vw, 3.5rem);
+		}
+
+		.cs-text {
+			font-size: (17/16rem);
+		}
+	}
+}

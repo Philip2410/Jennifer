@@ -1,6 +1,6 @@
 ---
-title: "Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO"
-description: "Meta description for the page"
+title: "Financial Advisor in Grande Prairie | Jennifer Chambers"
+description: "Jennifer Chambers is a financial advisor in Grande Prairie offering insurance, savings, and a free first meeting. Local, in person. Call now!"
 permalink: "/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
@@ -8,6 +8,11 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 {% extends "layouts/base.html" %}
 
 {% block head %}
+    <!-- Hero image preloads (match the hero picture sources) -->
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 576, height: 760, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 990, height: 1246, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 1260, height: 1628, position: "attention" }) | avif %}">
+
     <!-- Critical styles are loaded first -->
     <link rel="stylesheet" href="/assets/css/critical.css"/>
 
@@ -22,13 +27,357 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <link rel="stylesheet" href="/assets/css/local.css"/>
     {% endif %}
 
-    <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
-    <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
-    <!-- {% include "components/home-schema.html" %} -->
+    {% include "components/home-schema.html" %}
 {% endblock %}
 
 {% block body %}
 
+    <!-- Hero 288 -->
+    <!-- ============================================ -->
+    <!--                    Hero                      -->
+    <!-- ============================================ -->
+
+    <section id="hero-288">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Grande Prairie financial advice</span>
+                <h1 class="cs-title">Financial Advisor in Grande Prairie</h1>
+                <p class="cs-text">
+                    Jennifer Chambers is a financial advisor in Grande Prairie helping Peace Country families with insurance and investments. Book a free one-hour meeting.
+                </p>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <!--Hero Image-->
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 576, height: 760, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 990, height: 1246, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 1260, height: 1628, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 1260, height: 1628, position: "attention" }) | jpeg %}" alt="Financial advisor in Grande Prairie, AB" width="630" height="814" decoding="async" fetchpriority="high">
+            </picture>
+        </div>
+    </section>
+
+    <!-- Services 964 -->
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services-964">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Our Services</span>
+                <h2 class="cs-title">Complete Financial Solutions for Families in Grande Prairie</h2>
+                <p class="cs-text">
+                    We offer insurance, savings, and a clear plan for Peace Country families.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-analysis.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Financial Needs Analysis</h3>
+                    <p class="cs-item-text">
+                        Jennifer Chambers reviews your goals, risks, and money picture, then names the first step that actually matters.
+                    </p>
+                    <a href="/financial-needs-analysis/" class="cs-link">Read More<span class="cs-sr-only"> about Financial Needs Analysis</span></a>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-insurance.svg" alt="" width="40" height="35" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Insurance</h3>
+                    <p class="cs-item-text">
+                        Coverage from multiple carriers, including hard-to-insure cases, so the policy fits your plan and family.
+                    </p>
+                    <a href="/services/" class="cs-link">Read More<span class="cs-sr-only"> about Insurance</span></a>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-savings.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Savings &amp; Investments</h3>
+                    <p class="cs-item-text">
+                        From high-interest savings to guaranteed income funds, matched to your goals. Higher-risk options go to vetted partners.
+                    </p>
+                    <a href="/savings-investments/" class="cs-link">Read More<span class="cs-sr-only"> about Savings &amp; Investments</span></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sbs 1982 -->
+    <!-- ============================================ -->
+    <!--                Side By Side                  -->
+    <!-- ============================================ -->
+
+    <section id="sbs-1982">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Your Advisor</span>
+                <h2 class="cs-title">Meet Your Financial Advisor</h2>
+                <p class="cs-text-large">
+                    Jennifer Chambers is who you call as life changes: a house, a debt, a new goal, not a one-time product.
+                </p>
+                <p class="cs-text">
+                    After a free first hour, <a href="https://jenn.thelinkbetween.ca/" target="_blank" rel="noopener">Jennifer Chambers</a> stays with you as life evolves: insurance in your 25s to 40s, investments later, and a calm second opinion when you want a house or to clear debt. She is an insurance advisor, meeting in <a href="https://cityofgp.com/" target="_blank" rel="noopener">Grande Prairie, AB</a> or online.
+                </p>
+                <a href="/about/" class="cs-button-solid">Learn More<span class="cs-sr-only"> about Jennifer Chambers</span></a>
+                <div class="cs-ratings">
+                    <div class="cs-stars">
+                        <img class="cs-star" loading="lazy" decoding="async" src="/assets/svgs/star.svg" alt="" width="24" height="24" aria-hidden="true">
+                        <img class="cs-star" loading="lazy" decoding="async" src="/assets/svgs/star.svg" alt="" width="24" height="24" aria-hidden="true">
+                        <img class="cs-star" loading="lazy" decoding="async" src="/assets/svgs/star.svg" alt="" width="24" height="24" aria-hidden="true">
+                        <img class="cs-star" loading="lazy" decoding="async" src="/assets/svgs/star.svg" alt="" width="24" height="24" aria-hidden="true">
+                        <img class="cs-star" loading="lazy" decoding="async" src="/assets/svgs/star.svg" alt="" width="24" height="24" aria-hidden="true">
+                    </div>
+                    <div class="cs-rating">
+                        <h3 class="cs-h3">A plan you can live with</h3>
+                        <p class="cs-rating-text">
+                            She stays in the picture as your life and money change.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="cs-image-group">
+                <picture class="cs-background">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/family-walk.jpg" | resize({ width: 576, height: 960, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/family-walk.jpg" | resize({ width: 930, height: 1474, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/family-walk.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/family-walk.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | jpeg %}" alt="Family financial planning in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose 1313 -->
+    <!-- ============================================ -->
+    <!--                Why Choose Us                 -->
+    <!-- ============================================ -->
+
+    <section id="why-choose-1313">
+        <div class="cs-container">
+            <div class="cs-content">
+                <div class="cs-flex-group">
+                    <span class="cs-topper">A person beats a product</span>
+                    <h2 class="cs-title">Why a Financial Advisor in Grande Prairie</h2>
+                </div>
+                <p class="cs-text">
+                    Buying online is easy until a claim, a health history, or an estate gets messy. Jennifer Chambers works as a broker so the plan, the policy, and the next step stay aligned.
+                </p>
+            </div>
+            <div class="cs-flex">
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <h3 class="cs-h3">Our Mission</h3>
+                        <p class="cs-li-text">
+                            Jennifer Chambers aims to be the Peace Country person you keep: insurance, savings, and a straight answer when a big money decision shows up.
+                        </p>
+                    </li>
+                    <li class="cs-li">
+                        <h3 class="cs-h3">Our Philosophy</h3>
+                        <p class="cs-li-text">
+                            Safety and steady growth first. A small slice of higher-risk investing only if you ask, and only through partners she has already vetted.
+                        </p>
+                    </li>
+                </ul>
+                <div class="cs-image-group">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                        <!--Tablet Image-->
+                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 570, height: 800, position: "attention" }) | avif %}" type="image/avif">
+                        <!--Desktop Image-->
+                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 826, height: 800, position: "attention" }) | avif %}" type="image/avif">
+                        <img src="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 826, height: 800, position: "attention" }) | jpeg %}" alt="Family savings planning in Grande Prairie, AB" width="413" height="400" loading="lazy" decoding="async">
+                    </picture>
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                        <!--Tablet Image-->
+                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 570, height: 800, position: "attention" }) | avif %}" type="image/avif">
+                        <!--Desktop Image-->
+                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 826, height: 800, position: "attention" }) | avif %}" type="image/avif">
+                        <img src="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 826, height: 800, position: "attention" }) | jpeg %}" alt="Insurance advice in Grande Prairie, AB" width="413" height="400" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services 1645 -->
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services-1645">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Why Choose Us</span>
+                <h2 class="cs-title">Professional Financial Services Just For You</h2>
+                <p class="cs-text">We make insurance and savings straightforward.</p>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Free First Meeting</h3>
+                        <p class="cs-item-text">A free hour to learn your goals and name the first step. No charge to start.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">No Upfront Fee</h3>
+                        <p class="cs-item-text">Jennifer Chambers is commission-based. There is no planning invoice to begin.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Local and In Person</h3>
+                        <p class="cs-item-text">Grande Prairie and the Peace Country. Meet in person or book online.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-img-wrapper">
+                        <img class="cs-reviews-img" loading="lazy" decoding="async" src="/assets/svgs/check-circle.svg" alt="" width="48" height="48" aria-hidden="true">
+                    </div>
+                    <!-- Text Grouped For Flexbox-->
+                    <div class="cs-text-group">
+                        <h3 class="cs-h3">Year After Year</h3>
+                        <p class="cs-item-text">She stays the person you call when life moves and the plan has to follow.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    {# PLACEHOLDER: not publishable. Replace both cards with two real, named reviews before launch (PUNCHLIST launch blocker). #}
+    <!-- Reviews 727 -->
+    <!-- ============================================ -->
+    <!--                  Reviews                     -->
+    <!-- ============================================ -->
+
+    <section id="reviews-727">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Testimonials</span>
+                <h2 class="cs-title">What Clients Say About Jennifer Chambers</h2>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <img class="cs-icon" src="/assets/svgs/quote.svg" alt="" aria-hidden="true" width="40" height="38" loading="lazy" decoding="async">
+                    <h3 class="cs-h3">PLACEHOLDER: first review</h3>
+                    <p class="cs-item-text">
+                        PLACEHOLDER: a real client quote goes here. This copy only holds the layout until two named reviews are approved. Do not publish this placeholder.
+                    </p>
+                    <span class="cs-name">PLACEHOLDER: client name needed</span>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" src="/assets/svgs/quote.svg" alt="" aria-hidden="true" width="40" height="38" loading="lazy" decoding="async">
+                    <h3 class="cs-h3">PLACEHOLDER: second review</h3>
+                    <p class="cs-item-text">
+                        PLACEHOLDER: a second real quote goes here at about this length so the card does not collapse. Replace with someone Jennifer Chambers has actually helped before this section goes live.
+                    </p>
+                    <span class="cs-name">PLACEHOLDER: client name needed</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Faq 993 -->
+    <!-- ============================================ -->
+    <!--                    FAQ                       -->
+    <!-- ============================================ -->
+
+    <section id="faq-993">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Questions and answers</span>
+                <h2 class="cs-title">Financial Advisor FAQs in Grande Prairie</h2>
+            </div>
+            <div class="cs-flex-group">
+                <ul class="cs-faq-group">
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">Can I meet in person, or only online?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Both. Jennifer Chambers meets clients in person in Grande Prairie and online by video, so you can pick whatever is easier. Plenty of people start online and meet in person later, or the other way around.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item active">
+                        <button class="cs-button" aria-expanded="true">
+                            <span class="cs-button-text">How much does it cost to work with a financial advisor in Grande Prairie?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            There is no upfront planning fee. Jennifer Chambers is paid by commission on the products you actually put in place. The first meeting is about an hour and free, so you can see if the fit is right before anything is sold.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">Can you help with life insurance after a health scare?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Often, yes. Insurance companies look at health histories differently, so one company's no can be another's yes, sometimes at a higher price or with an exclusion. Jennifer Chambers works with several insurers, including some that take hard-to-insure cases, and can look for the best fit.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">How long does the process take?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            The first meeting takes about an hour. After that it depends on what you need. Some coverage can be set up quickly, while applications that need medical information take longer because the insurance company has to review them. Jennifer Chambers will tell you what to expect before you apply.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">Why work with a person instead of buying insurance online?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Buying online is easy until a claim, a health history or an estate gets complicated. A person compares several insurance companies for you, explains the trade-offs and keeps your plan and policies lined up. She's also the one you call when life changes or you need to make a claim.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">What is the difference between a will and insurance when someone dies?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            A will says who gets what from your estate. Life insurance creates money, usually paid straight to the person you name, outside your estate. They work together: insurance can cover debts and bills so your will can do what you intended. Jennifer Chambers doesn't write wills, so for that you'll need a lawyer.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            <a href="/faq/" class="cs-button-solid">View Full FAQ</a>
+        </div>
+    </section>
+
+    <script defer>
+        document.querySelectorAll("#faq-993 .cs-faq-item").forEach((item) => {
+            const button = item.querySelector(".cs-button");
+            button.addEventListener("click", () => {
+                const isOpen = item.classList.toggle("active");
+                button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+            });
+        });
+    </script>
 
     {% include 'sections/cta.html' %}
 {% endblock %}
