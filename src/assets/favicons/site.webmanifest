@@ -1,21 +1,25 @@
 {
-  "name": "Starter Kit",
-  "short_name": "Starter Kit",
+  "id": "/",
+  "name": "Jennifer Chambers",
+  "short_name": "Jennifer Chambers",
+  "description": "Jennifer Chambers is an insurance advisor in Grande Prairie, AB, offering insurance, savings and a free first meeting.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/assets/favicons/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
       "src": "/assets/favicons/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#003399",
   "background_color": "#ffffff",
   "display": "standalone"
 }
