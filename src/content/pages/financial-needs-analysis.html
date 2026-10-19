@@ -1,0 +1,262 @@
+---
+title: "Financial Needs Analysis Grande Prairie | Jennifer Chambers"
+description: "Jennifer Chambers offers a free financial needs analysis in Grande Prairie to find your risks and the right coverage for your stage of life. Call now!"
+permalink: "/financial-needs-analysis/"
+bannerTopper: "Your free first step"
+bannerTitle: "Financial Needs Analysis in Grande Prairie"
+bannerText: 'A financial needs analysis shows what you''re exposed to and what coverage you actually need. <a href="/">Jennifer Chambers</a> starts every client here, with a free one-hour meeting in Grande Prairie or online.'
+bannerImage: "/assets/images/planning-meeting.jpg"
+bannerAlt: "Financial needs analysis in Grande Prairie, AB"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <!-- Banner image preloads (match the banner picture sources) -->
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+
+    <link rel="stylesheet" href="/assets/css/financial-needs-analysis.css">
+    <script defer src="/assets/js/faq.js"></script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Service",
+                    "name": "Financial Needs Analysis",
+                    "url": "{{ client.domain }}/financial-needs-analysis/",
+                    "description": "{{ description }}",
+                    "serviceType": "Financial needs analysis",
+                    "provider": {
+                        "@type": "InsuranceAgency",
+                        "@id": "{{ client.domain }}/#business",
+                        "name": "{{ client.name }}"
+                    },
+                    "areaServed": {
+                        "@type": "City",
+                        "name": "Grande Prairie, AB"
+                    }
+                },
+                {
+                    "@type": "FAQPage",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "Is a financial needs analysis in Grande Prairie really free?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The first meeting is about an hour and there's no charge or planning fee. Jennifer Chambers is paid by commission from the insurance company, and only on coverage you decide to put in place. If you walk away with nothing but a clearer picture, that's fine too." }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "What should I bring to my first meeting?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "Whatever you can find easily: existing life or disability policies, your benefits booklet from work, mortgage details and a rough idea of your monthly costs. Don't worry if you can't find everything. Jennifer Chambers can still map out the big gaps and follow up on the details later." }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "I already have benefits through work. Do I still need a needs analysis?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. Group life and disability coverage is usually tied to your job and may be capped at a set amount. A needs analysis checks whether that's enough for your family, and what would happen if you changed jobs, started a business or retired." }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Will I be pressured to buy something?",
+                            "acceptedAnswer": { "@type": "Answer", "text": "No. The point is to understand your risks first. Jennifer Chambers explains what she sees and what she'd do first, then you decide. Some people act right away, some come back months later, and some only adjust what they already have." }
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+{% endblock %}
+
+{% block body %}
+
+    {% include "sections/banner.html" %}
+
+    <!-- Sbs 1982 -->
+    <!-- ============================================ -->
+    <!--                Side By Side                  -->
+    <!-- ============================================ -->
+
+    <section id="sbs-1982">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">What it is</span>
+                <h2 class="cs-title">A Clear Look at Your Risks Before Anyone Talks Products</h2>
+                <p class="cs-text-large">
+                    Most people buy insurance in pieces: some through the bank, a group plan at work, an old policy from a relative. Nobody has ever added it up.
+                </p>
+                <p class="cs-text">
+                    Jennifer Chambers does. She looks at your goals, income, debts, family and current coverage, then shows you the gaps. Sometimes the answer is <a href="/life-insurance/">life insurance</a>. Sometimes it's nothing new, just a better fit for what you already pay for.
+                </p>
+                <p class="cs-text cs-note">
+                    Want a rough number first? Try her <a href="https://jenn.thelinkbetween.ca/content/needs-analysis" target="_blank" rel="noopener">Insurance Needs Calculator</a> or read <a href="https://jenn.thelinkbetween.ca/content/planning-for-your-financial-future" target="_blank" rel="noopener">Planning for Your Financial Future</a>.
+                </p>
+            </div>
+            <div class="cs-image-group">
+                <picture class="cs-background">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/team-planning.jpg" | resize({ width: 576, height: 960, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/team-planning.jpg" | resize({ width: 930, height: 1474, position: "attention" }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/team-planning.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/team-planning.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | jpeg %}" alt="Insurance planning in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services 964 -->
+    <!-- ============================================ -->
+    <!--                  Services                    -->
+    <!-- ============================================ -->
+
+    <section id="services-964">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">What you get</span>
+                <h2 class="cs-title">What Your Grande Prairie Needs Analysis Covers</h2>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/icon-coverage-amount.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">A Real Number</h3>
+                    <p class="cs-item-text">
+                        How much coverage your family or business needs, worked out from your own debts, income and goals.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/icon-heart-check.svg" alt="" width="40" height="35" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">Gaps Found Early</h3>
+                    <p class="cs-item-text">
+                        Work benefits that end with the job, or mortgage insurance that only pays the bank. Better found now than at claim time.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/icon-house-dollar.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">One First Step</h3>
+                    <p class="cs-item-text">
+                        Not a list of ten products. You'll know what matters first and what can wait.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <picture class="cs-icon-wrapper">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/svc-life.svg" alt="" width="40" height="40" aria-hidden="true">
+                    </picture>
+                    <h3 class="cs-h3">No Judgment</h3>
+                    <p class="cs-item-text">
+                        Money is emotional. Ask anything, and expect a plan that leaves room to enjoy today too.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Steps 2361 -->
+    <!-- ============================================ -->
+    <!--                   Steps                      -->
+    <!-- ============================================ -->
+
+    <section id="steps-2361">
+        <div class="cs-container">
+            <div class="cs-wrapper">
+                <div class="cs-content">
+                    <span class="cs-topper">How it works</span>
+                    <h2 class="cs-title">How a Needs Analysis Works, Step by Step</h2>
+                </div>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <ol class="cs-card-group">
+                <li class="cs-item">
+                    <h3 class="cs-h3">Book a Time</h3>
+                    <p class="cs-desc">
+                        A free one-hour meeting, in person in Grande Prairie or online.
+                    </p>
+                    <span class="cs-number" aria-hidden="true">01</span>
+                </li>
+                <li class="cs-item">
+                    <h3 class="cs-h3">Talk It Through</h3>
+                    <p class="cs-desc">
+                        Your goals, family, work, debts and current coverage. Bring any policies or benefits booklets you have.
+                    </p>
+                    <span class="cs-number" aria-hidden="true">02</span>
+                </li>
+                <li class="cs-item">
+                    <h3 class="cs-h3">See the Gaps</h3>
+                    <p class="cs-desc">
+                        She explains what she found in plain language and names the first step that matters.
+                    </p>
+                    <span class="cs-number" aria-hidden="true">03</span>
+                </li>
+                <li class="cs-item">
+                    <h3 class="cs-h3">Decide in Your Own Time</h3>
+                    <p class="cs-desc">
+                        If you go ahead, she compares several insurance companies and handles the applications, then checks in as life changes.
+                    </p>
+                    <span class="cs-number" aria-hidden="true">04</span>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Faq 993 -->
+    <!-- ============================================ -->
+    <!--                    FAQ                       -->
+    <!-- ============================================ -->
+
+    <section id="faq-993">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Questions and answers</span>
+                <h2 class="cs-title">Financial Needs Analysis FAQs</h2>
+            </div>
+            <div class="cs-flex-group">
+                <ul class="cs-faq-group">
+                    <li class="cs-faq-item active">
+                        <button class="cs-button" aria-expanded="true">
+                            <span class="cs-button-text">Is a financial needs analysis in Grande Prairie really free?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Yes. The first meeting is about an hour and there's no charge or planning fee. Jennifer Chambers is paid by commission from the insurance company, and only on coverage you decide to put in place. If you walk away with nothing but a clearer picture, that's fine too.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">What should I bring to my first meeting?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Whatever you can find easily: existing life or disability policies, your benefits booklet from work, mortgage details and a rough idea of your monthly costs. Don't worry if you can't find everything. Jennifer Chambers can still map out the big gaps and follow up on the details later.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">I already have benefits through work. Do I still need a needs analysis?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            Often, yes. Group life and disability coverage is usually tied to your job and may be capped at a set amount. A needs analysis checks whether that's enough for your family, and what would happen if you changed jobs, started a business or retired.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button" aria-expanded="false">
+                            <span class="cs-button-text">Will I be pressured to buy something?</span>
+                        </button>
+                        <p class="cs-item-p">
+                            No. The point is to understand your risks first. Jennifer Chambers explains what she sees and what she'd do first, then you decide. Some people act right away, some come back months later, and some only adjust what they already have.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    {% include 'sections/cta.html' %}
+
+{% endblock %}
