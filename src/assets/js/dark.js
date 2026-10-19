@@ -2,7 +2,6 @@
 //    The Dark Mode System
 //
 
-// Get the button element once to avoid repeated DOM lookups
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 
 // Helper functions to toggle dark mode
@@ -11,7 +10,6 @@ function enableDarkMode() {
 	localStorage.setItem("theme", "dark");
 	// Update aria-pressed state
 	if (darkModeToggle) {
-		// Defensive check: ensure button exists
 		darkModeToggle.setAttribute("aria-pressed", "true");
 	}
 }
@@ -48,7 +46,6 @@ detectColorScheme();
 
 // Add event listener to the dark mode button toggle
 if (darkModeToggle) {
-	// Defensive check: ensure button exists before attaching listener
 	darkModeToggle.addEventListener("click", () => {
 		// On click, toggle the theme based on the current saved value
 		localStorage.getItem("theme") === "light" ? enableDarkMode() : disableDarkMode();

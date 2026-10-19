@@ -1,5 +1,3 @@
-<!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,8 +14,13 @@
         <meta property="og:description" content="{{ description }}"/>
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="{{ client.domain }}{{ page.url }}"/>
-        <meta property="og:image" content="{{ image or "/assets/images/logo-small.png" }}"/>
-        <meta property="og:image:secure_url" content="{{ image or "/assets/images/logo-small.png" }}"/>
+        <!-- Share cards need an absolute URL; a relative one shows no card on Facebook, LinkedIn, iMessage, or Slack -->
+        <meta property="og:image" content="{{ client.domain }}{{ image or "/assets/images/og-default.jpg" }}"/>
+        <meta property="og:image:secure_url" content="{{ client.domain }}{{ image or "/assets/images/og-default.jpg" }}"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="{{ client.domain }}{{ image or "/assets/images/og-default.jpg" }}"/>
 
         <!--Favicons-->
         <!-- https://realfavicongenerator.net/ -->
