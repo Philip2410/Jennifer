@@ -142,6 +142,11 @@
 
 		.cs-item {
 			grid-column: span 6;
+
+			/* an odd last card (2 + 1) sits centred */
+			&:last-child:nth-child(odd) {
+				grid-column: 4 / span 6;
+			}
 		}
 	}
 }
@@ -151,6 +156,10 @@
 	#services-964 {
 		.cs-item {
 			grid-column: span 4;
+
+			&:last-child:nth-child(odd) {
+				grid-column: span 4;
+			}
 		}
 	}
 }
@@ -764,6 +773,7 @@
 		}
 
 		.cs-title {
+			max-width: 100%;
 			margin-bottom: 0;
 		}
 
@@ -838,6 +848,11 @@
 				color: var(--secondary);
 			}
 
+			&:focus-visible {
+				/* inset so the item's overflow: hidden doesn't clip the ring */
+				outline-offset: -2px;
+			}
+
 			&:before {
 				/* left line */
 				content: "";
@@ -848,7 +863,7 @@
 				border-radius: 50%;
 				position: absolute;
 				display: block;
-				top: 50%;
+				top: calc(50% - 0.1875rem);
 				right: (24/16rem);
 				transform: rotate(45deg);
 				transform-origin: left center;
@@ -865,7 +880,7 @@
 				border-radius: 50%;
 				position: absolute;
 				display: block;
-				top: 50%;
+				top: calc(50% - 0.1875rem);
 				right: (21/16rem);
 				transform: rotate(-45deg);
 				transform-origin: right center;
@@ -875,10 +890,16 @@
 
 		.cs-button-text {
 			width: 100%;
+			/* number column, as the Figma's numbered list */
+			padding-left: (30/16rem);
 			display: block;
+			position: relative;
 
 			&:before {
-				content: counter(faq-993) ". ";
+				content: counter(faq-993) ".";
+				position: absolute;
+				top: 0;
+				left: 0;
 			}
 		}
 

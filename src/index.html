@@ -9,9 +9,9 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
 {% block head %}
     <!-- Hero image preloads (match the hero picture sources) -->
-    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 576, height: 760, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 990, height: 1246, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 1260, height: 1628, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot-hero.jpg" | resize({ width: 576, height: 760, position: "top" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot-hero.jpg" | resize({ width: 990, height: 1246, position: "top" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot-hero.jpg" | resize({ width: 1260, height: 1628, position: "top" }) | avif %}">
 
     <!-- Critical styles are loaded first -->
     <link rel="stylesheet" href="/assets/css/critical.css"/>
@@ -26,6 +26,8 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     {% else %}
         <link rel="stylesheet" href="/assets/css/local.css"/>
     {% endif %}
+
+    <script defer src="/assets/js/faq.js"></script>
 
     {% include "components/home-schema.html" %}
 {% endblock %}
@@ -50,12 +52,12 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <!--Hero Image-->
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 576, height: 760, position: "attention" }) | avif %}" type="image/avif">
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot-hero.jpg" | resize({ width: 576, height: 760, position: "top" }) | avif %}" type="image/avif">
                 <!--Tablet Image-->
-                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 990, height: 1246, position: "attention" }) | avif %}" type="image/avif">
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot-hero.jpg" | resize({ width: 990, height: 1246, position: "top" }) | avif %}" type="image/avif">
                 <!--Desktop Image-->
-                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 1260, height: 1628, position: "attention" }) | avif %}" type="image/avif">
-                <img src="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 1260, height: 1628, position: "attention" }) | jpeg %}" alt="Financial advisor in Grande Prairie, AB" width="630" height="814" decoding="async" fetchpriority="high">
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot-hero.jpg" | resize({ width: 1260, height: 1628, position: "top" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/jennifer-chambers-headshot-hero.jpg" | resize({ width: 1260, height: 1628, position: "top" }) | jpeg %}" alt="Financial advisor in Grande Prairie, AB" width="630" height="814" decoding="async" fetchpriority="high">
             </picture>
         </div>
     </section>
@@ -93,7 +95,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                     <p class="cs-item-text">
                         Coverage from multiple carriers, including hard-to-insure cases, so the policy fits your plan and family.
                     </p>
-                    <a href="/services/" class="cs-link">Read More<span class="cs-sr-only"> about Insurance</span></a>
+                    <a href="/life-insurance/" class="cs-link">Read More<span class="cs-sr-only"> about Insurance</span></a>
                 </li>
                 <li class="cs-item">
                     <picture class="cs-icon-wrapper">
@@ -190,21 +192,21 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                 <div class="cs-image-group">
                     <picture class="cs-picture">
                         <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 576, height: 640, position: "center" }) | avif %}" type="image/avif">
                         <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 570, height: 800, position: "attention" }) | avif %}" type="image/avif">
+                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 570, height: 800, position: "center" }) | avif %}" type="image/avif">
                         <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 826, height: 800, position: "attention" }) | avif %}" type="image/avif">
-                        <img src="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 826, height: 800, position: "attention" }) | jpeg %}" alt="Family savings planning in Grande Prairie, AB" width="413" height="400" loading="lazy" decoding="async">
+                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 826, height: 800, position: "center" }) | avif %}" type="image/avif">
+                        <img src="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 826, height: 800, position: "center" }) | jpeg %}" alt="Family savings planning in Grande Prairie, AB" width="413" height="400" loading="lazy" decoding="async">
                     </picture>
                     <picture class="cs-picture">
                         <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 576, height: 640, position: "attention" }) | avif %}" type="image/avif">
+                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 576, height: 640, position: "center" }) | avif %}" type="image/avif">
                         <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 570, height: 800, position: "attention" }) | avif %}" type="image/avif">
+                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 570, height: 800, position: "center" }) | avif %}" type="image/avif">
                         <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 826, height: 800, position: "attention" }) | avif %}" type="image/avif">
-                        <img src="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 826, height: 800, position: "attention" }) | jpeg %}" alt="Insurance advice in Grande Prairie, AB" width="413" height="400" loading="lazy" decoding="async">
+                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 826, height: 800, position: "center" }) | avif %}" type="image/avif">
+                        <img src="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 826, height: 800, position: "center" }) | jpeg %}" alt="Insurance advice in Grande Prairie, AB" width="413" height="400" loading="lazy" decoding="async">
                     </picture>
                 </div>
             </div>
@@ -368,16 +370,6 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <a href="/faq/" class="cs-button-solid">View Full FAQ</a>
         </div>
     </section>
-
-    <script defer>
-        document.querySelectorAll("#faq-993 .cs-faq-item").forEach((item) => {
-            const button = item.querySelector(".cs-button");
-            button.addEventListener("click", () => {
-                const isOpen = item.classList.toggle("active");
-                button.setAttribute("aria-expanded", isOpen ? "true" : "false");
-            });
-        });
-    </script>
 
     {% include 'sections/cta.html' %}
 {% endblock %}

@@ -248,6 +248,11 @@
 
 		.cs-item {
 			grid-column: span 6;
+
+			/* an odd last card (2 + 1) sits centred */
+			&:last-child:nth-child(odd) {
+				grid-column: 4 / span 6;
+			}
 		}
 	}
 }
@@ -257,6 +262,10 @@
 	#services-964 {
 		.cs-item {
 			grid-column: span 3;
+
+			&:last-child:nth-child(odd) {
+				grid-column: span 3;
+			}
 		}
 	}
 }

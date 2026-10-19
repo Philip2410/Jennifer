@@ -1,12 +1,9 @@
 {% set servicePages = [
     { name: "Financial Needs Analysis", url: "/financial-needs-analysis/" },
     { name: "Life Insurance", url: "/life-insurance/" },
-    { name: "Disability & Critical Illness", url: "/disability-critical-illness-insurance/" },
-    { name: "Health & Dental", url: "/health-dental-insurance/" },
-    { name: "Small Business Benefits", url: "/small-business-benefits/" },
     { name: "Savings & Investments", url: "/savings-investments/" }
 ] %}
-{% set servicesActive = page.url in ["/services/", "/financial-needs-analysis/", "/life-insurance/", "/disability-critical-illness-insurance/", "/health-dental-insurance/", "/small-business-benefits/", "/savings-investments/"] %}
+{% set servicesActive = page.url in ["/services/", "/financial-needs-analysis/", "/life-insurance/", "/savings-investments/"] %}
 
 <!-- Header 757 -->
 <!-- ============================================ -->
@@ -58,11 +55,6 @@
                             </li>
                         </ul>
                     </li>
-                    {# Reviews stays out of the live nav until real reviews exist (Elliot's sitemap). Restore this item when /reviews/ ships:
-                    <li class="cs-li">
-                        <a href="/reviews/" class="cs-li-link {{ 'cs-active' if page.url == '/reviews/' }}">Reviews</a>
-                    </li>
-                    #}
                     <li class="cs-li">
                         <a href="/faq/" class="cs-li-link {{ 'cs-active' if page.url == '/faq/' }}" {% if page.url == '/faq/' %}aria-current="page"{% endif %}>
                             FAQ
