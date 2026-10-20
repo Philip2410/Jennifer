@@ -1,8 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // ABOUT PAGE STYLES
-// Sections in page order. The banner, nav, CTA and footer live in root.less.
-// sbs-1982, services-964 and services-1645 are copies of the homepage
-// versions (local.less), adjusted for this page.
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
@@ -59,12 +56,6 @@
 			}
 		}
 
-
-
-
-
-
-
 		.cs-image-group {
 			width: 100%;
 			max-width: (630/16rem);
@@ -108,7 +99,32 @@
 
 		.cs-image-group {
 			height: auto;
-			min-height: (680/16rem);
+			min-height: 0;
+			align-self: stretch;
+		}
+
+		.cs-background {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			img {
+				object-position: center;
+			}
+		}
+	}
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#sbs-1982 {
+		.cs-content {
+			padding: (48/16rem) 0;
+			align-self: center;
+		}
+
+		.cs-image-group {
+			min-height: (600/16rem);
 		}
 	}
 }
@@ -249,7 +265,6 @@
 		.cs-item {
 			grid-column: span 6;
 
-			/* an odd last card (2 + 1) sits centred */
 			&:last-child:nth-child(odd) {
 				grid-column: 4 / span 6;
 			}

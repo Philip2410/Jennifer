@@ -1,9 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// LEGAL PAGE STYLES (/privacy-policy/, /terms-of-use/)
-// Both pages share this file. The banner, nav and footer live in root.less.
-// The text column is stitch 1533 (content page), copied from BNI-SNW's
-// legal.less with the photo and decorations removed, restyled to the Figma
-// ("Privacy Policy" 51:617, "Terms of Use" 51:803).
+// LEGAL PAGE STYLES
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
@@ -32,7 +28,6 @@
 			/* set text align to left if content needs to be left aligned */
 			text-align: left;
 			width: 100%;
-			/* Figma: 850px text column, left-aligned with the banner text */
 			max-width: (850/16rem);
 			display: flex;
 			flex-direction: column;
@@ -53,7 +48,7 @@
 		}
 
 		h2 {
-			/* 20px - 25px (Figma Desktop/H4) */
+			/* 20px - 25px */
 			font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
 			/* 40px - 48px between sections */
 			margin-top: clamp(2.5rem, 4vw, 3rem);
@@ -109,7 +104,6 @@
 				position: relative;
 
 				&:before {
-					/* custom list bullet: Figma green 8px square */
 					content: "";
 					width: (8/16rem);
 					height: (8/16rem);

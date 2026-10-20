@@ -7,7 +7,6 @@ permalink: "/life-insurance/"
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <!-- Banner image preloads (match the banner picture sources) -->
     <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/family-autumn-walk.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
     <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/family-autumn-walk.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
     <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/family-autumn-walk.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
@@ -150,8 +149,8 @@ permalink: "/life-insurance/"
                     <thead>
                         <tr>
                             <td></td>
-                            <th scope="col">Bank's insurance</th>
-                            <th scope="col" class="cs-highlight">A policy you own</th>
+                            <th scope="col">Bank's Insurance</th>
+                            <th scope="col" class="cs-highlight">A Policy You Own</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -182,10 +181,10 @@ permalink: "/life-insurance/"
                     <!--Mobile Image-->
                     <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/couple-new-home-keys.jpg" | resize({ width: 576, height: 960, position: "attention" }) | avif %}" type="image/avif">
                     <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/couple-new-home-keys.jpg" | resize({ width: 930, height: 1474, position: "attention" }) | avif %}" type="image/avif">
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/couple-new-home-keys.jpg" | resize({ width: 930, height: 1466, position: "attention" }) | avif %}" type="image/avif">
                     <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/couple-new-home-keys.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | avif %}" type="image/avif">
-                    <img src="{% getUrl "/assets/images/couple-new-home-keys.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | jpeg %}" alt="Couple holding the keys to their new home, mortgage life insurance in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/couple-new-home-keys.jpg" | resize({ width: 1260, height: 1602, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/couple-new-home-keys.jpg" | resize({ width: 1260, height: 1602, position: "attention" }) | jpeg %}" alt="Couple holding the keys to their new home, mortgage life insurance in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
                 </picture>
             </div>
         </div>

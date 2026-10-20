@@ -7,7 +7,6 @@ permalink: "/savings-investments/"
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <!-- Banner image preloads (match the banner picture sources) -->
     <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/investment-chart.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
     <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/investment-chart.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
     <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/investment-chart.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
@@ -114,10 +113,10 @@ permalink: "/savings-investments/"
                     <!--Mobile Image-->
                     <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/retired-couple-tablet.jpg" | resize({ width: 576, height: 960, position: "attention" }) | avif %}" type="image/avif">
                     <!--Tablet Image-->
-                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/retired-couple-tablet.jpg" | resize({ width: 930, height: 1474, position: "attention" }) | avif %}" type="image/avif">
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/retired-couple-tablet.jpg" | resize({ width: 930, height: 1200, position: "attention" }) | avif %}" type="image/avif">
                     <!--Desktop Image-->
-                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/retired-couple-tablet.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | avif %}" type="image/avif">
-                    <img src="{% getUrl "/assets/images/retired-couple-tablet.jpg" | resize({ width: 1260, height: 1460, position: "attention" }) | jpeg %}" alt="Retired couple smiling at a tablet, savings and investment planning in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/retired-couple-tablet.jpg" | resize({ width: 1260, height: 1200, position: "attention" }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/retired-couple-tablet.jpg" | resize({ width: 1260, height: 1200, position: "attention" }) | jpeg %}" alt="Retired couple smiling at a tablet, savings and investment planning in Grande Prairie, AB" width="630" height="730" loading="lazy" decoding="async">
                 </picture>
             </div>
         </div>

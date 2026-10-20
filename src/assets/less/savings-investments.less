@@ -1,8 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // SAVINGS & INVESTMENTS PAGE STYLES
-// Sections in page order. The banner, nav, CTA and footer live in root.less.
-// sbs-1982 and services-1645 are copies of the About versions (about.less),
-// faq-993 is a copy of the homepage version (local.less).
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
@@ -59,12 +56,6 @@
 			}
 		}
 
-
-
-
-
-
-
 		.cs-image-group {
 			width: 100%;
 			max-width: (630/16rem);
@@ -108,7 +99,32 @@
 
 		.cs-image-group {
 			height: auto;
-			min-height: (680/16rem);
+			min-height: 0;
+			align-self: stretch;
+		}
+
+		.cs-background {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			img {
+				object-position: center;
+			}
+		}
+	}
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#sbs-1982 {
+		.cs-content {
+			padding: (48/16rem) 0;
+			align-self: center;
+		}
+
+		.cs-image-group {
+			min-height: (600/16rem);
 		}
 	}
 }
@@ -349,7 +365,6 @@
 			}
 
 			&:focus-visible {
-				/* inset so the item's overflow: hidden doesn't clip the ring */
 				outline-offset: -2px;
 			}
 
@@ -390,7 +405,6 @@
 
 		.cs-button-text {
 			width: 100%;
-			/* number column, as the Figma's numbered list */
 			padding-left: (30/16rem);
 			display: block;
 			position: relative;

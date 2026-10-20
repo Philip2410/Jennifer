@@ -1,7 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // HOME PAGE STYLES
-// Below-the-fold homepage sections, in page order. The hero lives in
-// critical.less; nav, CTA and footer live in root.less.
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
@@ -143,7 +141,6 @@
 		.cs-item {
 			grid-column: span 6;
 
-			/* an odd last card (2 + 1) sits centred */
 			&:last-child:nth-child(odd) {
 				grid-column: 4 / span 6;
 			}
@@ -304,7 +301,32 @@
 
 		.cs-image-group {
 			height: auto;
-			min-height: (680/16rem);
+			min-height: 0;
+			align-self: stretch;
+		}
+
+		.cs-background {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			img {
+				object-position: center;
+			}
+		}
+	}
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+	#sbs-1982 {
+		.cs-content {
+			padding: (48/16rem) 0;
+			align-self: center;
+		}
+
+		.cs-image-group {
+			min-height: (600/16rem);
 		}
 	}
 }
@@ -849,7 +871,6 @@
 			}
 
 			&:focus-visible {
-				/* inset so the item's overflow: hidden doesn't clip the ring */
 				outline-offset: -2px;
 			}
 
@@ -890,7 +911,6 @@
 
 		.cs-button-text {
 			width: 100%;
-			/* number column, as the Figma's numbered list */
 			padding-left: (30/16rem);
 			display: block;
 			position: relative;

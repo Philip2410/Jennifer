@@ -51,7 +51,6 @@ faqGroups:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    <!-- Banner image preloads (match the banner picture sources) -->
     <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/woman-phone-call-notes.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
     <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/woman-phone-call-notes.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
     <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/woman-phone-call-notes.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">

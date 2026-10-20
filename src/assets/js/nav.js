@@ -1,7 +1,3 @@
-// Gonzcat house nav (from Good-Time-Clean). Mobile is checked at click time, not
-// once at load, so the Services dropdown still opens after a desktop → phone resize.
-// Works with or without a .cs-dropdown. Keep this file when placing a nav stitch;
-// do not paste the stitch's own nav JS over it (2391's is the old load-time version).
 (() => {
 	// Configuration
 	const CONFIG = {
@@ -95,7 +91,6 @@
 			elements.navigation.querySelectorAll(CONFIG.SELECTORS.dropdown).forEach((dropdown) => {
 				const menu = dropdown.querySelector(CONFIG.SELECTORS.dropdownMenu);
 				if (!menu) return;
-				// Open dropdowns stay interactive; closed ones stay inert
 				menu.inert = !dropdown.classList.contains(CONFIG.CLASSES.active);
 			});
 		},
@@ -112,7 +107,6 @@
 			elements.body.classList.toggle(CONFIG.CLASSES.menuOpen);
 			toggleAttribute(elements.hamburger, "aria-expanded");
 
-			// Set inert from open state (absolute, not toggle — survives iOS resize)
 			if (elements.menuWrapper && isMobile()) {
 				elements.menuWrapper.inert = isClosing;
 			}
@@ -214,8 +208,6 @@
 		inertState() {
 			if (!elements.menuWrapper) return;
 
-			// Desktop: panel always interactive. Mobile: inert only while the hamburger menu is closed.
-			// Never force inert=true while the menu is visually open (iOS fires resize often).
 			elements.menuWrapper.inert = isMobile() && !isMenuOpen();
 
 			dropdownManager.syncInert();
@@ -245,7 +237,7 @@
 			document.addEventListener("keydown", (e) => e.key === "Escape" && keyboardManager.handleEscape());
 			document.addEventListener("focusin", eventManager.handleMobileFocus);
 
-			// Resize handling — re-sync inert from open state; close mobile menu if crossing to desktop
+			// Resize handling
 			window.addEventListener("resize", () => {
 				this.inertState();
 				if (!isMobile() && isMenuOpen()) {

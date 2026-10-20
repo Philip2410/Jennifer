@@ -1,7 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // CODESTITCH GLOBAL STYLES
-// Core stylesheet: variables, base element styling, typography, utilities,
-// navigation, CTA (contact) and footer. Page sections never go in here.
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
@@ -11,7 +9,6 @@
 /* CodeStitch Core Styles + Reset */
 @media only screen and (min-width: 0px) {
 	:root {
-		/* Brand tokens from the approved Figma (file I9Gl0atT8YweLz9J1meq23) */
 		--primary: #003399;
 		--primaryLight: #ccd6eb;
 		--primaryTint: #f2f5fa;
@@ -100,7 +97,6 @@
 		opacity: 0;
 	}
 
-	// Gonzcat house button: Figma "Primary CTA" (square, primary fill, Archivo Bold 16, 56px)
 	.cs-button-solid {
 		z-index: 1;
 		position: relative;
@@ -128,7 +124,6 @@
 		}
 	}
 
-	// Figma nav "Primary CTA" outline variant (1px dark border, dark text)
 	.cs-button-outline {
 		z-index: 1;
 		position: relative;
@@ -165,7 +160,6 @@
 		font-weight: 700;
 	}
 
-	// Visually hidden text for screen readers (descriptive link suffixes)
 	.cs-sr-only {
 		width: 1px;
 		height: 1px;
@@ -220,11 +214,12 @@
 		color: var(--bodyTextColor);
 	}
 
-	// Inline links inside body text (Iris: green + underlined on every page).
-	// Class-less only, so buttons, nav, cards and footer links keep their own styles.
 	p a:not([class]),
-	li a:not([class]) {
+	li a:not([class]),
+	td a:not([class]) {
 		font-size: inherit;
+		line-height: inherit;
+		font-weight: inherit;
 		color: var(--secondary);
 		text-decoration: underline;
 		text-decoration-thickness: 1px;
@@ -249,7 +244,6 @@
 		}
 	}
 
-	// One visible keyboard focus ring site-wide (WCAG 2.4.7)
 	a,
 	button,
 	input,
@@ -262,7 +256,6 @@
 		}
 	}
 
-	// Form controls don't inherit font-family by default; without this they render in Arial
 	button,
 	input,
 	select,
@@ -273,7 +266,7 @@
 
 /* Fonts */
 @media only screen and (min-width: 0px) {
-	/* archivo-700 - latin (headings, buttons) */
+	/* archivo-700 - latin */
 	@font-face {
 		font-style: normal;
 		font-family: "Archivo";
@@ -291,7 +284,7 @@
 		src: local(""), url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"), url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff");
 	}
 
-	/* roboto-600 - latin (review names) */
+	/* roboto-600 - latin */
 	@font-face {
 		font-style: normal;
 		font-family: "Roboto";
@@ -862,12 +855,10 @@
 <---          Banner            -->
 <--- -------------------------- -*/
 
-/* Shared interior banner: hero-288 restyled (Figma "Interior Banner" 34:126) */
-
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
 	#banner-288 {
-		/* clears the fixed nav: 132px - 208px top, 60px - 100px bottom */
+		/* 132px - 208px top, 60px - 100px bottom */
 		padding: clamp(8.25rem, 16vw, 13rem) (16/16rem) clamp(3.75rem, 7.82vw, 6.25rem);
 		background-color: var(--primaryTint);
 		position: relative;
@@ -894,7 +885,7 @@
 		}
 
 		.cs-title {
-			/* 39px - 72px (Figma Display/D2) */
+			/* 39px - 72px */
 			font-size: clamp(2.4375rem, 5vw, 4.5rem);
 			line-height: 1.2em;
 			max-width: 20ch;
@@ -902,13 +893,12 @@
 		}
 
 		.cs-text {
-			/* 16px - 20px (Figma Body-L) */
+			/* 16px - 20px */
 			font-size: clamp(1rem, 1.5vw, 1.25rem);
 			line-height: 1.5em;
 			max-width: (740/16rem);
 			margin: 0 0 (32/16rem);
 
-			/* no button after it (legal pages, 404) */
 			&:last-child {
 				margin-bottom: 0;
 			}
@@ -1108,7 +1098,6 @@
 			color: var(--bodyTextColor);
 		}
 
-		// Figma shows placeholder-only fields: label text stays for screen readers, hidden visually
 		.cs-label {
 			font-size: 0;
 			width: 100%;
@@ -1217,7 +1206,7 @@
 @media only screen and (min-width: 0rem) {
 	#footer-1392 {
 		padding: var(--sectionPadding);
-		/* 80px - 100px, clears the overlapping form */
+		/* 80px - 100px */
 		padding-top: clamp(5rem, 7vw, 6.25rem);
 		padding-bottom: (32/16rem);
 		background-color: var(--dark);
@@ -1358,7 +1347,6 @@
 		}
 
 		.cs-copyright-link {
-			/* 24px+ tap target */
 			padding: (4/16rem) 0;
 			display: inline-block;
 
@@ -1370,26 +1358,6 @@
 		.cs-separater {
 			margin: 0 (16/16rem);
 			display: inline-block;
-		}
-
-		.cs-credit {
-			font-size: (14/16rem);
-			line-height: 1.5em;
-			text-align: center;
-			width: 100%;
-			margin: (24/16rem) 0 0;
-			color: #9e9fa2;
-
-			.cs-credit-link {
-				font-size: inherit;
-				text-decoration: none;
-				color: var(--footerTextColor);
-				transition: color 0.3s;
-
-				&:hover {
-					color: var(--secondary);
-				}
-			}
 		}
 	}
 }

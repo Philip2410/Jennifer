@@ -1,10 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // CONTACT PAGE STYLES
-// Sections in page order. The banner, nav and footer live in root.less.
-// contact-1392 reuses the shared CTA styles in root.less (same stitch); the
-// rules below only turn it into the on-page version from Figma 50:506:
-// white section, no footer overlap, tinted form panel with white fields,
-// a Book Online row and the Follow block. steps-2361 is from Assura-Risk-Group.
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
@@ -34,7 +29,6 @@
 
 		.cs-follow {
 			width: 100%;
-			/* 32px column gap + 16px top padding in the Figma */
 			margin-top: (48/16rem);
 		}
 
@@ -125,7 +119,6 @@
 			font-size: (14/16rem);
 			line-height: 1.5em;
 			width: 100%;
-			/* 4px + the form's 12px gap = 16px under the button */
 			margin: (4/16rem) 0 0;
 			color: var(--bodyTextColor);
 		}
@@ -217,7 +210,7 @@
 
 		.cs-desc {
 			margin: 0;
-			/* 32px - 48px down to the number */
+			/* 32px - 48px */
 			padding-bottom: clamp(2rem, 4vw, 3rem);
 		}
 

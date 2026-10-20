@@ -1,8 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// FAQ PAGE STYLES (/faq/)
-// The banner, nav, CTA and footer live in root.less. The four question groups
-// use a copy of the homepage faq-993 block (local.less), plus each group's
-// ground colour and where its numbering starts.
+// FAQ PAGE STYLES
 // ─────────────────────────────────────────────────────────────────────────────
 
 /*-- -------------------------- -->
@@ -116,7 +113,6 @@
 			}
 
 			&:focus-visible {
-				/* inset so the item's overflow: hidden doesn't clip the ring */
 				outline-offset: -2px;
 			}
 
@@ -157,7 +153,6 @@
 
 		.cs-button-text {
 			width: 100%;
-			/* number column, as the Figma's numbered list */
 			padding-left: (30/16rem);
 			display: block;
 			position: relative;
@@ -183,13 +178,11 @@
 			color: var(--bodyTextColor);
 			/* clips the text so it doesn't show up */
 			overflow: hidden;
-			/* this page's answers hold links: keep closed ones out of the tab order */
 			visibility: hidden;
 			transition: opacity 0.3s, padding-bottom 0.3s, visibility 0.3s;
 		}
 	}
 
-	/* Page groups: numbers run to 14, so the number column widens to fit two digits */
 	#faq-993,
 	#faq-993-insurance,
 	#faq-993-business,
@@ -199,12 +192,10 @@
 		}
 	}
 
-	/* Page groups: alternating grounds as in the Figma (B W B W G B); rows turn white on a tinted ground */
 	#faq-993-insurance {
 		background-color: var(--primaryTint);
 
 		.cs-faq-group {
-			/* numbering runs on from group 1 (6 questions) */
 			counter-reset: faq-993 6;
 		}
 
@@ -215,7 +206,6 @@
 
 	#faq-993-business {
 		.cs-faq-group {
-			/* runs on from groups 1 and 2 (10 questions) */
 			counter-reset: faq-993 10;
 		}
 	}
@@ -224,7 +214,6 @@
 		background-color: var(--secondaryLight);
 
 		.cs-faq-group {
-			/* runs on from groups 1 to 3 (12 questions) */
 			counter-reset: faq-993 12;
 		}
 
