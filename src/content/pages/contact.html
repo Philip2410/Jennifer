@@ -2,11 +2,6 @@
 title: "Contact Jennifer Chambers | Grande Prairie Insurance Advisor"
 description: "Contact Jennifer Chambers, insurance advisor in Grande Prairie. Book a free one-hour meeting, in person or online, or call (780) 897-3212. Call now!"
 permalink: "/contact/"
-bannerTopper: "Contact"
-bannerTitle: "Contact Jennifer Chambers in Grande Prairie"
-bannerText: 'Book a free one-hour meeting, give her a call, or send a message. <a href="/">Jennifer Chambers</a> meets in person in Grande Prairie or online, whichever suits you.'
-bannerImage: "/assets/images/jennifer-chambers-headshot-square.jpg"
-bannerAlt: "Jennifer Chambers, insurance advisor in Grande Prairie, AB"
 ---
 {#
     Contact has its own details + form block, so it does not include sections/cta.html:
@@ -17,9 +12,9 @@ bannerAlt: "Jennifer Chambers, insurance advisor in Grande Prairie, AB"
 
 {% block head %}
     <!-- Banner image preloads (match the banner picture sources) -->
-    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot-square.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot-square.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot-square.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
 
     <link rel="stylesheet" href="/assets/css/contact.css">
 
@@ -54,7 +49,33 @@ bannerAlt: "Jennifer Chambers, insurance advisor in Grande Prairie, AB"
 
 {% block body %}
 
-    {% include "sections/banner.html" %}
+    <!-- Banner 288 -->
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <section id="banner-288">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Contact</span>
+                <h1 class="cs-title">Contact Jennifer Chambers in Grande Prairie</h1>
+                <p class="cs-text">
+                    Book a free one-hour meeting, give her a call, or send a message. <a href="/">Jennifer Chambers</a> meets in person in Grande Prairie or online, whichever suits you.
+                </p>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <!--Banner Image-->
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot-square.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot-square.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot-square.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/jennifer-chambers-headshot-square.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | jpeg %}" alt="Jennifer Chambers, insurance advisor in Grande Prairie, AB" width="413" height="520" decoding="async" fetchpriority="high">
+            </picture>
+        </div>
+    </section>
 
     <!-- Contact 1392 -->
     <!-- ============================================ -->

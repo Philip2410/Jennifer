@@ -2,20 +2,15 @@
 title: "About Jennifer Chambers | Grande Prairie Insurance Advisor"
 description: "Meet Jennifer Chambers, a Grande Prairie insurance advisor who left 25 years as an optician to help families plan ahead. Free first meeting. Call now!"
 permalink: "/about/"
-bannerTopper: "About Jennifer"
-bannerTitle: "About Jennifer Chambers, Insurance Advisor in Grande Prairie"
-bannerText: "Jennifer Chambers spent 25 years as an optician before her own money wake-up call changed her path. Now she helps Grande Prairie families and business owners get protected and plan ahead."
-bannerImage: "/assets/images/jennifer-chambers-headshot.jpg"
-bannerAlt: "Jennifer Chambers, insurance advisor in Grande Prairie, AB"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
     <!-- Banner image preloads (match the banner picture sources) -->
-    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
 
     <link rel="stylesheet" href="/assets/css/about.css">
 
@@ -29,7 +24,7 @@ bannerAlt: "Jennifer Chambers, insurance advisor in Grande Prairie, AB"
                 "@type": "Person",
                 "name": "{{ client.personName }}",
                 "jobTitle": "Insurance Advisor",
-                "image": "{{ client.domain }}{{ bannerImage }}",
+                "image": "{{ client.domain }}/assets/images/jennifer-chambers-headshot.jpg",
                 "worksFor": {
                     "@type": "InsuranceAgency",
                     "@id": "{{ client.domain }}/#business",
@@ -48,7 +43,33 @@ bannerAlt: "Jennifer Chambers, insurance advisor in Grande Prairie, AB"
 
 {% block body %}
 
-    {% include "sections/banner.html" %}
+    <!-- Banner 288 -->
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <section id="banner-288">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">About Jennifer</span>
+                <h1 class="cs-title">About Jennifer Chambers, Insurance Advisor in Grande Prairie</h1>
+                <p class="cs-text">
+                    Jennifer Chambers spent 25 years as an optician before her own money wake-up call changed her path. Now she helps Grande Prairie families and business owners get protected and plan ahead.
+                </p>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <!--Banner Image-->
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/jennifer-chambers-headshot.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | jpeg %}" alt="Jennifer Chambers, insurance advisor in Grande Prairie, AB" width="413" height="520" decoding="async" fetchpriority="high">
+            </picture>
+        </div>
+    </section>
 
     <!-- Sbs 1982 -->
     <!-- ============================================ -->

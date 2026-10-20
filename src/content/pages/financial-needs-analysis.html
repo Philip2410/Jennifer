@@ -2,20 +2,15 @@
 title: "Financial Needs Analysis Grande Prairie | Jennifer Chambers"
 description: "Jennifer Chambers offers a free financial needs analysis in Grande Prairie to find your risks and the right coverage for your stage of life. Call now!"
 permalink: "/financial-needs-analysis/"
-bannerTopper: "Your free first step"
-bannerTitle: "Financial Needs Analysis in Grande Prairie"
-bannerText: 'A financial needs analysis shows what you''re exposed to and what coverage you actually need. <a href="/">Jennifer Chambers</a> starts every client here, with a free one-hour meeting in Grande Prairie or online.'
-bannerImage: "/assets/images/planning-meeting.jpg"
-bannerAlt: "Financial needs analysis in Grande Prairie, AB"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
     <!-- Banner image preloads (match the banner picture sources) -->
-    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
 
     <link rel="stylesheet" href="/assets/css/financial-needs-analysis.css">
     <script defer src="/assets/js/faq.js"></script>
@@ -72,7 +67,33 @@ bannerAlt: "Financial needs analysis in Grande Prairie, AB"
 
 {% block body %}
 
-    {% include "sections/banner.html" %}
+    <!-- Banner 288 -->
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <section id="banner-288">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Your free first step</span>
+                <h1 class="cs-title">Financial Needs Analysis in Grande Prairie</h1>
+                <p class="cs-text">
+                    A financial needs analysis shows what you're exposed to and what coverage you actually need. <a href="/">Jennifer Chambers</a> starts every client here, with a free one-hour meeting in Grande Prairie or online.
+                </p>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <!--Banner Image-->
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/planning-meeting.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | jpeg %}" alt="Financial needs analysis in Grande Prairie, AB" width="413" height="520" decoding="async" fetchpriority="high">
+            </picture>
+        </div>
+    </section>
 
     <!-- Sbs 1982 -->
     <!-- ============================================ -->

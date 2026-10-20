@@ -4,10 +4,6 @@ description: "This page isn't here. Head back to the Jennifer Chambers home page
 permalink: "/404/"
 sitemap:
     ignore: true
-bannerTopper: "404 error"
-bannerTitle: "Page Not Found"
-bannerShowButton: false
-bannerText: 'Sorry, that page has moved or never existed. Try one of these instead: <a href="/">Back to Home</a> or <a href="/services/">See Services</a>.'
 ---
 
 {% extends "layouts/base.html" %}
@@ -19,7 +15,22 @@ bannerText: 'Sorry, that page has moved or never existed. Try one of these inste
 
 {% block body %}
 
-    {% include "sections/banner.html" %}
+    <!-- Banner 288 -->
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <section id="banner-288" class="cs-no-image">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">404 error</span>
+                <h1 class="cs-title">Page Not Found</h1>
+                <p class="cs-text">
+                    Sorry, that page has moved or never existed. Try one of these instead: <a href="/">Back to Home</a> or <a href="/services/">See Services</a>.
+                </p>
+            </div>
+        </div>
+    </section>
 
     {% include 'sections/cta.html' %}
 

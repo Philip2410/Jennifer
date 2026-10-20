@@ -2,11 +2,6 @@
 title: "Insurance & Financial FAQs | Grande Prairie | J. Chambers"
 description: "Answers from Jennifer Chambers on cost, life insurance after a health scare, meeting online and more for Grande Prairie families. Call now!"
 permalink: "/faq/"
-bannerTopper: "Questions and answers"
-bannerTitle: "Insurance and Financial Planning FAQs in Grande Prairie"
-bannerText: "Straight answers to the questions people ask most before their first meeting. Don't see yours? Call (780) 897-3212 or book a free hour and ask in person."
-bannerImage: "/assets/images/woman-phone-call-notes.jpg"
-bannerAlt: "Woman taking notes on a phone call, insurance and financial planning advice in Grande Prairie, AB"
 # One list feeds the accordions and the FAQPage schema, so they never disagree.
 # Numbering is continuous (1 to 14): faq.less starts each group's counter where the last one ended.
 faqGroups:
@@ -57,9 +52,9 @@ faqGroups:
 
 {% block head %}
     <!-- Banner image preloads (match the banner picture sources) -->
-    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/woman-phone-call-notes.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/woman-phone-call-notes.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/woman-phone-call-notes.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
 
     <link rel="stylesheet" href="/assets/css/faq.css">
     <script defer src="/assets/js/faq.js"></script>
@@ -84,7 +79,33 @@ faqGroups:
 
 {% block body %}
 
-    {% include "sections/banner.html" %}
+    <!-- Banner 288 -->
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <section id="banner-288">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Questions and answers</span>
+                <h1 class="cs-title">Insurance and Financial Planning FAQs in Grande Prairie</h1>
+                <p class="cs-text">
+                    Straight answers to the questions people ask most before their first meeting. Don't see yours? Call (780) 897-3212 or book a free hour and ask in person.
+                </p>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <!--Banner Image-->
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/woman-phone-call-notes.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/woman-phone-call-notes.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/woman-phone-call-notes.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/woman-phone-call-notes.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | jpeg %}" alt="Woman taking notes on a phone call, insurance and financial planning advice in Grande Prairie, AB" width="413" height="520" decoding="async" fetchpriority="high">
+            </picture>
+        </div>
+    </section>
 
     {% for group in faqGroups %}
     <!-- Faq 993 -->

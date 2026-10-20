@@ -2,20 +2,15 @@
 title: "Life Insurance | Grande Prairie | Jennifer Chambers"
 description: "Jennifer Chambers compares term, whole life and mortgage life insurance in Grande Prairie from several insurers. Free one-hour meeting. Call now!"
 permalink: "/life-insurance/"
-bannerTopper: "Life insurance"
-bannerTitle: "Life Insurance in Grande Prairie"
-bannerText: 'Life insurance protects your family, your income and the legacy you leave. <a href="/">Jennifer Chambers</a> compares several insurance companies so your coverage fits your budget and goals.'
-bannerImage: "/assets/images/family-autumn-walk.jpg"
-bannerAlt: "Mother and son walking in autumn, life insurance in Grande Prairie, AB"
 ---
 
 {% extends "layouts/base.html" %}
 
 {% block head %}
     <!-- Banner image preloads (match the banner picture sources) -->
-    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl bannerImage | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
-    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl bannerImage | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(max-width: 600px)" href="{% getUrl "/assets/images/family-autumn-walk.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 601px) and (max-width: 1024px)" href="{% getUrl "/assets/images/family-autumn-walk.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}">
+    <link rel="preload" as="image" type="image/avif" media="(min-width: 1024px)" href="{% getUrl "/assets/images/family-autumn-walk.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}">
 
     <link rel="stylesheet" href="/assets/css/life-insurance.css">
     <script defer src="/assets/js/faq.js"></script>
@@ -72,7 +67,33 @@ bannerAlt: "Mother and son walking in autumn, life insurance in Grande Prairie, 
 
 {% block body %}
 
-    {% include "sections/banner.html" %}
+    <!-- Banner 288 -->
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <section id="banner-288">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Life insurance</span>
+                <h1 class="cs-title">Life Insurance in Grande Prairie</h1>
+                <p class="cs-text">
+                    Life insurance protects your family, your income and the legacy you leave. <a href="/">Jennifer Chambers</a> compares several insurance companies so your coverage fits your budget and goals.
+                </p>
+                <a href="{{ client.bookingLink }}" class="cs-button-solid" target="_blank" rel="noopener">Book a Meeting</a>
+            </div>
+            <!--Banner Image-->
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/family-autumn-walk.jpg" | resize({ width: 576, height: 840, position: "attention" }) | avif %}" type="image/avif">
+                <!--Tablet Image-->
+                <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/family-autumn-walk.jpg" | resize({ width: 826, height: 1024, position: "attention" }) | avif %}" type="image/avif">
+                <!--Desktop Image-->
+                <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/family-autumn-walk.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | avif %}" type="image/avif">
+                <img src="{% getUrl "/assets/images/family-autumn-walk.jpg" | resize({ width: 826, height: 1040, position: "attention" }) | jpeg %}" alt="Mother and son walking in autumn, life insurance in Grande Prairie, AB" width="413" height="520" decoding="async" fetchpriority="high">
+            </picture>
+        </div>
+    </section>
 
     <!-- Services 964 -->
     <!-- ============================================ -->
