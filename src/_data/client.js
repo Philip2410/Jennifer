@@ -10,8 +10,7 @@ module.exports = {
         state: "AB",
         country: "CA",
     },
-    // OPEN: final booking link (Zoho CRM). Outlook Bookings page from her email signature until then.
-    bookingLink: "https://outlook.office365.com/owa/calendar/JenniferChambersFinancialServices@insureforsuccess.com/bookings/",
+    bookingLink: "https://jenniferchambers.zohobookings.ca/4451000000032008",
     socials: {
         facebook: "https://www.facebook.com/people/Jennifer-Chambers-Financial-Services/61551573070418/",
         linkedin: "https://www.linkedin.com/in/jennifer-chambers-6335562bb",
