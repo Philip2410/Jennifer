@@ -363,19 +363,23 @@
 		}
 
 		.cs-content {
-			text-align: left;
+			text-align: center;
 			width: 100%;
 			display: flex;
 			flex-direction: column;
-			align-items: flex-start;
+			align-items: center;
 		}
 
 		.cs-title {
 			max-width: 25ch;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		.cs-text {
 			max-width: (522/16rem);
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		.cs-ul {
@@ -459,18 +463,19 @@
 		}
 
 		.cs-content {
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: flex-end;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
 			gap: (20/16rem);
 		}
 
 		.cs-title {
-			margin: 0;
+			margin: 0 auto;
 		}
 
 		.cs-flex-group {
-			width: 50%;
+			width: 100%;
 			/* prevents flexbox from squishing it */
 			flex: none;
 		}
