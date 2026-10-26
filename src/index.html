@@ -165,15 +165,11 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     <section id="why-choose-1313">
         <div class="cs-container">
             <div class="cs-content">
-                <div class="cs-flex-group">
-                    <span class="cs-topper">A person beats a product</span>
-                    <h2 class="cs-title">Why a Financial Advisor in Grande Prairie</h2>
-                </div>
+                <span class="cs-topper">A person beats a product</span>
+                <h2 class="cs-title">Why a Financial Advisor in Grande Prairie</h2>
                 <p class="cs-text">
                     Buying online is easy until a claim, a health history, or an estate gets messy. Jennifer Chambers works as a broker so the plan, the policy, and the next step stay aligned.
                 </p>
-            </div>
-            <div class="cs-flex">
                 <ul class="cs-ul">
                     <li class="cs-li">
                         <h3 class="cs-h3">Her Mission</h3>
@@ -188,26 +184,17 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                         </p>
                     </li>
                 </ul>
-                <div class="cs-image-group">
-                    <picture class="cs-picture">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 576, height: 640, position: "center" }) | avif %}" type="image/avif">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 570, height: 800, position: "center" }) | avif %}" type="image/avif">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 826, height: 800, position: "center" }) | avif %}" type="image/avif">
-                        <img src="{% getUrl "/assets/images/family-bike.jpg" | resize({ width: 826, height: 800, position: "center" }) | jpeg %}" alt="Family savings planning in Grande Prairie, AB" width="413" height="400" loading="lazy" decoding="async">
-                    </picture>
-                    <picture class="cs-picture">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 576, height: 640, position: "center" }) | avif %}" type="image/avif">
-                        <!--Tablet Image-->
-                        <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 570, height: 800, position: "center" }) | avif %}" type="image/avif">
-                        <!--Desktop Image-->
-                        <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 826, height: 800, position: "center" }) | avif %}" type="image/avif">
-                        <img src="{% getUrl "/assets/images/handshake.jpg" | resize({ width: 826, height: 800, position: "center" }) | jpeg %}" alt="Insurance advice in Grande Prairie, AB" width="413" height="400" loading="lazy" decoding="async">
-                    </picture>
-                </div>
+            </div>
+            <div class="cs-image-group">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/family-at-home.jpg" | resize({ width: 576 }) | avif %}" type="image/avif">
+                    <!--Tablet Image-->
+                    <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/family-at-home.jpg" | resize({ width: 1040 }) | avif %}" type="image/avif">
+                    <!--Desktop Image-->
+                    <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/family-at-home.jpg" | resize({ width: 1040 }) | avif %}" type="image/avif">
+                    <img src="{% getUrl "/assets/images/family-at-home.jpg" | resize({ width: 1040 }) | jpeg %}" alt="Family at home, financial advisor in Grande Prairie, AB" width="520" height="527" loading="lazy" decoding="async">
+                </picture>
             </div>
         </div>
     </section>
