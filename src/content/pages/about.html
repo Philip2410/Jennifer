@@ -24,11 +24,7 @@ permalink: "/about/"
                 "name": "{{ client.personName }}",
                 "jobTitle": "Insurance Advisor",
                 "image": "{{ client.domain }}/assets/images/jennifer-chambers-headshot.jpg",
-                "worksFor": {
-                    "@type": "InsuranceAgency",
-                    "@id": "{{ client.domain }}/#business",
-                    "name": "{{ client.name }}"
-                },
+                "worksFor": { "@id": "{{ client.domain }}/#business" },
                 "memberOf": [
                     { "@type": "Organization", "name": "Grande Prairie Chamber of Commerce" },
                     { "@type": "Organization", "name": "BNI Northern Connections" },

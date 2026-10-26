@@ -22,11 +22,6 @@
                     { "@type": "City", "name": "Grande Prairie, AB" },
                     { "@type": "AdministrativeArea", "name": "Peace Country, AB" }
                 ],
-                "founder": {
-                    "@type": "Person",
-                    "name": "{{ client.personName }}",
-                    "jobTitle": "Insurance Advisor"
-                },
                 "sameAs": [{%- for platform, url in client.socials -%}{% if not loop.first %}, {% endif %}"{{ url }}"{%- endfor -%}],
                 "hasOfferCatalog": {
                     "@type": "OfferCatalog",
